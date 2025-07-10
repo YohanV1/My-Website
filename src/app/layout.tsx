@@ -82,8 +82,7 @@ export default function RootLayout({
         {/* Default fallback */}
         <link rel="icon" href="/light_mode_logo.png" media="(prefers-color-scheme: light)"/>
         
-        {/* Preload critical resources */}
-        <link rel="preload" href="/photo.png" as="image" />
+        {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://cloud.umami.is" />
         
       </head>

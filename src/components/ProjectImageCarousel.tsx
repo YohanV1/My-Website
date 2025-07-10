@@ -25,7 +25,7 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
     );
   }, [images.length]);
 
-  // Auto-advance carousel every 5 seconds
+  // Auto-advance carousel every 10 seconds
   useEffect(() => {
     if (images.length <= 1) return;
     
@@ -33,7 +33,7 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [images.length, goToNext, goToPrevious]);

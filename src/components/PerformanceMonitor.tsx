@@ -16,17 +16,12 @@ export default function PerformanceMonitor() {
     // Monitor Core Web Vitals
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        // Log to console for debugging
-        if ('value' in entry && typeof entry.value === 'number') {
-          console.log(`${entry.name}: ${entry.value}`);
-          
-          // Send to analytics if needed
-          if (window.gtag) {
-            window.gtag('event', entry.name, {
-              value: Math.round(entry.value),
-              event_category: 'Web Vitals',
-            });
-          }
+        // Send to analytics if needed
+        if ('value' in entry && typeof entry.value === 'number' && window.gtag) {
+          window.gtag('event', entry.name, {
+            value: Math.round(entry.value),
+            event_category: 'Web Vitals',
+          });
         }
       }
     });
@@ -39,7 +34,7 @@ export default function PerformanceMonitor() {
       for (const entry of list.getEntries()) {
         const resourceEntry = entry as PerformanceResourceTiming;
         if (resourceEntry.initiatorType === 'img' && resourceEntry.duration > 1000) {
-          console.warn(`Slow image load: ${entry.name} took ${Math.round(resourceEntry.duration)}ms`);
+          // Removed console.warn for slow image loads
         }
       }
     });
@@ -50,8 +45,7 @@ export default function PerformanceMonitor() {
     const navigationObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.entryType === 'navigation') {
-          const navEntry = entry as PerformanceNavigationTiming;
-          console.log('Page Load Time:', Math.round(navEntry.loadEventEnd - navEntry.loadEventStart), 'ms');
+          // Navigation timing monitoring (removed console.log)
         }
       }
     });

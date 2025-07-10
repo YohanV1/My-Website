@@ -22,6 +22,16 @@ export default function Projects() {
       company: 'Moative'
     },
     {
+      title: 'My Website!',
+      description: 'Custom-built portfolio using React, Next.js, and Tailwind CSS, designed to showcase my work. Built from scratch with a focus on performance (95+ Lighthouse), SEO, and accessibility. Includes dark mode, analytics, Open Graph metadata, and a custom 404 page. Deployed via Vercel with CI/CD.',
+      images: ['/project-images/Portfolio_1.png'],
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'SendGrid', 'Vercel'],
+      github: 'https://github.com/YohanV1/My-Website',
+      demo: '#',
+      featured: true,
+      company: 'Independent'
+    },
+    {
       title: 'Leslie: Municipal Permit Automation',
       description: 'Developed AI-powered permit processing system for small municipalities using multi-agent AI for document verification. Implements automated compliance assessment for technical documents including site plans, construction drawings, and regulatory checklists with dual citizen/municipal interfaces.',
       images: ['/project-images/Leslie_1.png', '/project-images/Leslie_2.png','/project-images/Leslie_3.png','/project-images/Leslie_4.png', '/project-images/Leslie_5.png', '/project-images/Leslie_6.png', '/project-images/Leslie_7.png'],
@@ -73,16 +83,6 @@ export default function Projects() {
       company: 'Moative'
     },
     {
-      title: 'AI for CEQA: Environmental Impact Assessment',
-      description: 'Developed AI system for California Environmental Quality Act compliance using document analysis and recommendation generation. Processes PDF documents with ChromaDB vector database and provides automated impact assessment, mitigation strategies, and document justification for renewable energy projects.',
-      images: ['/project-images/CEQA_1.png', '/project-images/CEQA_2.png'],
-      technologies: ['Django', 'Google Gemini', 'ChromaDB', 'Sentence Transformers', 'PyPDF2', 'Tailwind CSS', 'Leaflet.js', 'RAG'],
-      github: '#',
-      demo: '#',
-      featured: true,
-      company: 'Moative'
-    },
-    {
       title: 'Company/People Lookup API (Agentic RAG)',
       description: 'Built multi-agent AI system for comprehensive company intelligence gathering using FastAPI and LangChain. Implements web scraping, Google Custom Search integration, and RAG-based NAICS classification to provide detailed company profiles with industry analysis.',
       images: ['/project-images/Lookup_1.png', '/project-images/Lookup_2.png'],
@@ -103,14 +103,14 @@ export default function Projects() {
       company: 'Samsung R&D'
     },
     {
-      title: 'My Website!',
-      description: 'Custom-built portfolio using React, Next.js, Tailwind CSS, and Framer Motion, designed to showcase my work. Built from scratch with a focus on performance (95+ Lighthouse), SEO, and accessibility. Includes dark mode, blog, analytics, Open Graph metadata, and a custom 404 page. Deployed via Vercel with CI/CD.',
-      images: ['/project-images/Portfolio_1.png'],
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
-      github: 'https://github.com/YohanV1/My-Website',
+      title: 'AI for CEQA: Environmental Impact Assessment',
+      description: 'Developed AI system for California Environmental Quality Act compliance using document analysis and recommendation generation. Processes PDF documents with ChromaDB vector database and provides automated impact assessment, mitigation strategies, and document justification for renewable energy projects.',
+      images: ['/project-images/CEQA_1.png', '/project-images/CEQA_2.png'],
+      technologies: ['Django', 'Google Gemini', 'ChromaDB', 'Sentence Transformers', 'PyPDF2', 'Tailwind CSS', 'Leaflet.js', 'RAG'],
+      github: '#',
       demo: '#',
       featured: true,
-      company: 'Independent'
+      company: 'Moative'
     },
     {
       title: 'WinkCode: Eye Blink to Morse Code Translator',

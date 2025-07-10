@@ -87,7 +87,7 @@ export default function Hero() {
             
             {/* Photo Section */}
             <div className="flex justify-center lg:justify-end">
-              <div className="photo-container">
+              <div className="photo-container lg:-mt-6">
                 <OptimizedImage 
                   src="/photo.png" 
                   alt="Yohan Vergis Vinu" 
@@ -105,7 +105,7 @@ export default function Hero() {
       </div>
       
       {/* Animated Scroll Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
         <svg 
           className="w-6 h-6 text-gray-400 dark:text-gray-500" 
           fill="none" 

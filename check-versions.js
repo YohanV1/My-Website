@@ -2,6 +2,7 @@
 
 const https = require('https');
 const { execSync } = require('child_process');
+const fs = require('fs');
 
 // Technologies to check
 const technologies = [
@@ -62,12 +63,26 @@ function getLatestVersion(packageName) {
   });
 }
 
-// Function to get current version from package.json
-function getCurrentVersion(packageName) {
+// Function to get current installed version from node_modules
+function getInstalledVersion(packageName) {
+  try {
+    const packageJsonPath = `./node_modules/${packageName}/package.json`;
+    if (fs.existsSync(packageJsonPath)) {
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+      return packageJson.version;
+    }
+    return 'Not installed';
+  } catch (error) {
+    return 'Error reading package.json';
+  }
+}
+
+// Function to get version range from package.json
+function getVersionRange(packageName) {
   try {
     const packageJson = require('./package.json');
     const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
-    return allDeps[packageName] || 'Not installed';
+    return allDeps[packageName] || 'Not specified';
   } catch (error) {
     return 'Error reading package.json';
   }
@@ -82,12 +97,14 @@ async function checkVersions() {
   for (const tech of technologies) {
     try {
       const latestVersion = await getLatestVersion(tech.npm);
-      const currentVersion = getCurrentVersion(tech.npm);
+      const installedVersion = getInstalledVersion(tech.npm);
+      const versionRange = getVersionRange(tech.npm);
       
       results.push({
         name: tech.name,
-        current: currentVersion,
+        installed: installedVersion,
         latest: latestVersion,
+        range: versionRange,
         npm: tech.npm
       });
     } catch (error) {
@@ -97,32 +114,34 @@ async function checkVersions() {
   
   // Display results in a nice table format
   console.log('📊 Version Comparison:\n');
-  console.log('Technology'.padEnd(25) + 'Current'.padEnd(15) + 'Latest'.padEnd(15) + 'Status');
-  console.log('─'.repeat(70));
+  console.log('Technology'.padEnd(20) + 'Installed'.padEnd(12) + 'Latest'.padEnd(12) + 'Range'.padEnd(15) + 'Status');
+  console.log('─'.repeat(80));
   
   results.forEach(result => {
-    const current = result.current;
+    const installed = result.installed;
     const latest = result.latest;
+    const range = result.range;
     
     let status = '✅ Up to date';
-    if (current === 'Not installed') {
+    if (installed === 'Not installed') {
       status = '❌ Not installed';
-    } else if (current !== latest) {
+    } else if (installed !== latest) {
       status = '🔄 Update available';
     }
     
     console.log(
-      result.name.padEnd(25) +
-      current.padEnd(15) +
-      latest.padEnd(15) +
+      result.name.padEnd(20) +
+      installed.padEnd(12) +
+      latest.padEnd(12) +
+      range.padEnd(15) +
       status
     );
   });
   
   console.log('\n📋 Summary:');
-  const upToDate = results.filter(r => r.current === r.latest).length;
-  const needsUpdate = results.filter(r => r.current !== r.latest && r.current !== 'Not installed').length;
-  const notInstalled = results.filter(r => r.current === 'Not installed').length;
+  const upToDate = results.filter(r => r.installed === r.latest).length;
+  const needsUpdate = results.filter(r => r.installed !== r.latest && r.installed !== 'Not installed').length;
+  const notInstalled = results.filter(r => r.installed === 'Not installed').length;
   
   console.log(`✅ Up to date: ${upToDate}`);
   console.log(`🔄 Needs update: ${needsUpdate}`);
