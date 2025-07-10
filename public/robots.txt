@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location (add your domain)
-Sitemap: https://yohanvergisvinu.com/sitemap.xml
+Sitemap: https://yohanvv.com/sitemap.xml
 
 # Disallow crawling of any private or admin areas (if any)
 # Disallow: /admin/

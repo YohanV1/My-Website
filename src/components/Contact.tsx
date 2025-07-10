@@ -81,7 +81,7 @@ export default function Contact() {
         setSubmitStatus('error');
         setSubmitMessage(data.error || 'Failed to send message. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setSubmitMessage('Network error. Please check your connection and try again.');
     } finally {
@@ -153,10 +153,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              I'm always interested in new opportunities, collaborations, and interesting 
+              I&apos;m always interested in new opportunities, collaborations, and interesting 
               projects. Whether you have a question about my work at Moative, my research 
               interests, or just want to say hi, feel free to reach out.
             </p>

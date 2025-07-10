@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,8 +21,20 @@ export default function Navigation() {
       <div className="container-max">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="text-xl font-semibold text-gradient">
-            <img src="/light_mode_logo.png" alt="Logo" className="h-8 w-auto dark:hidden" />
-            <img src="/dark_mode_logo.png" alt="Logo" className="h-8 w-auto hidden dark:block" />
+            <Image
+              src="/light_mode_logo.png"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto dark:hidden"
+            />
+            <Image
+              src="/dark_mode_logo.png"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto hidden dark:block"
+            />
           </a>
           
           {/* Desktop Navigation */}

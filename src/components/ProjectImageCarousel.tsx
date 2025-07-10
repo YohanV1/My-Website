@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import OptimizedImage from './OptimizedImage';
 
 interface ProjectImageCarouselProps {
   images: string[];
@@ -11,6 +12,18 @@ interface ProjectImageCarouselProps {
 export default function ProjectImageCarousel({ images, projectTitle }: ProjectImageCarouselProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const goToPrevious = useCallback(() => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [images.length]);
 
   // Auto-advance carousel every 5 seconds
   useEffect(() => {
@@ -23,7 +36,7 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images.length, goToNext, goToPrevious]);
 
   // Handle keyboard navigation in modal
   useEffect(() => {
@@ -45,19 +58,7 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isModalOpen]);
-
-  const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  }, [isModalOpen, goToNext, goToPrevious]);
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index);
@@ -109,13 +110,17 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
                 index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <img
-                src={image}
-                alt={`${projectTitle} - Image ${index + 1}`}
-                className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl rounded-lg"
-                style={{ maxHeight: '85vh', maxWidth: '95vw' }}
-                loading="lazy"
-              />
+              <div style={{ maxHeight: '85vh', maxWidth: '95vw' }}>
+                <OptimizedImage
+                  src={image}
+                  alt={`${projectTitle} - Image ${index + 1}`}
+                  width={1200}
+                  height={800}
+                  className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl rounded-lg"
+                  sizes="(max-width: 768px) 95vw, 85vw"
+                  quality={85}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -173,11 +178,14 @@ export default function ProjectImageCarousel({ images, projectTitle }: ProjectIm
                 index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <img
+              <OptimizedImage
                 src={image}
                 alt={`${projectTitle} - Image ${index + 1}`}
+                width={800}
+                height={600}
                 className="w-full h-full object-contain"
-                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={80}
               />
             </div>
           ))}

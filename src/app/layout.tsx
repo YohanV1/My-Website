@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../contexts/ThemeContext";
+import PerformanceMonitor from "../components/PerformanceMonitor";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -20,14 +21,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://yohanvergisvinu.com"),
+  metadataBase: new URL("https://yohanvv.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Yohan Vergis Vinu - Full-Stack ML/AI Engineer",
     description: "Full-stack AI engineer with deep startup experience, building fast, scalable, and user-focused products. CS Master's Student at University of Pennsylvania.",
-    url: "https://yohanvergisvinu.com",
+    url: "https://yohanvv.com",
     siteName: "Yohan Vergis Vinu Portfolio",
     images: [
       {
@@ -73,18 +74,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            tailwind.config = {
-              darkMode: 'class',
-              theme: {
-                extend: {}
-              }
-            }
-          `
-        }} />
-        
         {/* Umami Analytics */}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="b8960906-5cc6-4b8f-ae42-55d8438a44f2"></script>
         
@@ -93,11 +82,16 @@ export default function RootLayout({
         {/* Default fallback */}
         <link rel="icon" href="/light_mode_logo.png" media="(prefers-color-scheme: light)"/>
         
+        {/* Preload critical resources */}
+        <link rel="preload" href="/photo.png" as="image" />
+        <link rel="dns-prefetch" href="https://cloud.umami.is" />
+        
       </head>
       <body className="antialiased">
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <PerformanceMonitor />
       </body>
     </html>
   );

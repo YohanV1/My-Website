@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Experience() {
   const experiences = [
     {
@@ -5,7 +7,7 @@ export default function Experience() {
       company: 'Moative',
       logo: '/moative.png',
       period: '2023 - Present',
-      description: '• Led full-stack development and drove end-to-end build and launch of multiple GenAI products, PoCs, and demos\n• Developed AI-enabled GovTech tools, HR assistants, dashboards, backends, and agentic chat and voice bots for large-scale utility companies in the U.S\n• One project, Vina, is now live on Product Hunt',
+      description: '• Led full-stack development and drove end-to-end build and launch of multiple GenAI products, PoCs, and demos\n• Developed AI-enabled GovTech tools, HR assistants, dashboards, backends, and agentic chat and voice bots for large-scale utility companies in the U.S',
       technologies: ['React', 'Node.js', 'Python', 'OpenAI API', 'LangChain', 'AWS', 'PostgreSQL']
     },
     {
@@ -40,9 +42,11 @@ export default function Experience() {
                     {exp.logo && (
                       <div className="flex-shrink-0">
                         <div className="bg-white dark:bg-white p-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-300">
-                          <img 
+                          <Image 
                             src={exp.logo} 
                             alt={`${exp.company} logo`} 
+                            width={64}
+                            height={64}
                             className="w-16 h-16 object-contain"
                           />
                         </div>

@@ -1,3 +1,5 @@
+import OptimizedImage from './OptimizedImage';
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center section-padding hero-bg">
@@ -86,10 +88,15 @@ export default function Hero() {
             {/* Photo Section */}
             <div className="flex justify-center lg:justify-end">
               <div className="photo-container">
-                <img 
+                <OptimizedImage 
                   src="/photo.png" 
                   alt="Yohan Vergis Vinu" 
+                  width={320}
+                  height={320}
                   className="w-80 h-80 rounded-full object-cover shadow-lg relative z-10"
+                  priority={true}
+                  sizes="(max-width: 768px) 320px, 320px"
+                  quality={90}
                 />
               </div>
             </div>

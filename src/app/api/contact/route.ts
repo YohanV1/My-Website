@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import sgMail from '@sendgrid/mail';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +25,6 @@ export async function POST(request: NextRequest) {
 
     // Send email using SendGrid
     if (process.env.SENDGRID_API_KEY) {
-      const sgMail = require('@sendgrid/mail');
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       
       await sgMail.send({

@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -21,9 +22,11 @@ export default function About() {
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <div className="bg-white dark:bg-white p-3 rounded-lg shadow-sm border border-gray-200 dark:border-gray-300">
-                        <img 
+                        <Image 
                           src="/upenn.png" 
                           alt="University of Pennsylvania logo" 
+                          width={112}
+                          height={112}
                           className="w-28 h-28 object-contain"
                         />
                       </div>
@@ -41,9 +44,11 @@ export default function About() {
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <div className="bg-white dark:bg-white p-3 rounded-lg shadow-sm border border-gray-200 dark:border-gray-300">
-                        <img 
+                        <Image 
                           src="/srm.png" 
                           alt="SRM IST Chennai logo" 
+                          width={112}
+                          height={112}
                           className="w-28 h-28 object-contain"
                         />
                       </div>
@@ -68,13 +73,13 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  I'm an incoming Master’s student in Computer Science at the University of Pennsylvania’s School of Engineering and Applied Science (Penn Engineering). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
+                  I&apos;m an incoming Master&apos;s student in Computer Science at the University of Pennsylvania&apos;s School of Engineering and Applied Science (Penn Engineering). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
                 </p>
                 <p>
                   At Moative (an AI startup), I led full-stack development and drove the end-to-end build and launch of multiple GenAI products, PoCs, and demos, including AI-enabled GovTech tools, HR assistants, dashboards, backend systems, and agentic chat/voice bots for large U.S. utility companies. One of the projects I led, Vina, is now live on Product Hunt.
                 </p>
                 <p>
-                  Previously, at Samsung R&D, I spearheaded a computer vision research project in the PetTech domain. Our team received a Certificate of Excellence and a $1,000 award for our work.
+                  Previously, at Samsung R&amp;D, I spearheaded a computer vision research project in the PetTech domain. Our team received a Certificate of Excellence and a $1,000 award for our work.
                 </p>
                 <p>
                   During my undergraduate degree, I was a four-time elected class representative (Best CR award recipient) and led the Networking Nexus student club, organizing and serving as the keynote speaker for hands-on IoT workshops attended by 150+ students.
