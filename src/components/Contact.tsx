@@ -156,8 +156,8 @@ export default function Contact() {
               Let&apos;s Connect
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-  I'm always open to building cool things, solving hard problems, or joining forces on something new.
-  Whether you're looking to hire, need something built, or just want to say hi, I'd love to hear from you.
+  I&apos;m always open to building cool things, solving hard problems, or joining forces on something new.
+  Whether you&apos;re looking to hire, need something built, or just want to say hi, I&apos;d love to hear from you.
   <br className="hidden sm:block" />
   Prefer email? Reach me at <a href="mailto:yohanvvinu@gmail.com" className="underline underline-offset-2 hover:text-gray-800 dark:hover:text-white">yohanvvinu@gmail.com</a>.
 </p>

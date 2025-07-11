@@ -27,7 +27,7 @@ export default function Extracurricular() {
                 onClick={() => toggleSection('innovation')}
                 className="w-full px-6 py-4 text-left bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200 flex items-center justify-between"
               >
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Innovation School Fellow, Maker's Asylum</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Innovation School Fellow, Maker&apos;s Asylum</h3>
                 <svg
                   className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${
                     expandedSections.innovation ? 'rotate-180' : ''
@@ -49,7 +49,7 @@ export default function Extracurricular() {
                           <div className="bg-white dark:bg-white p-3 rounded-lg shadow-sm border border-gray-200 dark:border-gray-300">
                             <Image 
                               src="/makersimg.png" 
-                              alt="Maker's Asylum logo" 
+                              alt="Maker&apos;s Asylum logo" 
                               width={80}
                               height={80}
                               className="w-20 h-20 object-contain"
