@@ -16,7 +16,7 @@ export default function Extracurricular() {
       <div className="container-max">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Extracurricular Activities
+            Extracurricular
           </h2>
           
           <div className="space-y-4">

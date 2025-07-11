@@ -13,7 +13,7 @@ export default function Research() {
       conference: 'IEEE INDISCON 2025',
       status: 'Accepted (unable to present, not published)',
       technologies: ['Python', 'TensorFlow', 'Neural Networks', 'Ensemble Learning', 'Synthetic Data Generation', 'Time Series Forecasting', 'Machine Learning'],
-      year: '2025',
+      year: 'April 2025',
       type: 'Final Year Project'
     }
   ];
@@ -31,18 +31,20 @@ export default function Research() {
           {research.map((paper, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg"
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg border-l-4 border-l-gray-900 dark:border-l-blue-400"
             >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-3 italic">
+              <div className="p-8">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-4">
                   {paper.title}
                 </h3>
                 
+                {/* Authors */}
                 <div className="mb-4">
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {paper.authors.map((author, index) => (
                       <span key={index}>
-                        <span className={author.bold ? 'font-bold' : 'font-normal'}>
+                        <span className={author.bold ? 'font-bold text-gray-900 dark:text-white' : 'font-normal'}>
                           {author.name}
                         </span>
                         {index < paper.authors.length - 1 && ', '}
@@ -51,10 +53,29 @@ export default function Research() {
                   </p>
                 </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  📍 {paper.conference} | NIT Rourkela | {paper.status} | {paper.year}
-                </p>
+                {/* Conference and Status */}
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    📍 {paper.conference}
+                  </span>
+                  <span className="text-gray-400">•</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    NIT Rourkela
+                  </span>
+                  <span className="text-gray-400">•</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    {paper.year}
+                  </span>
+                </div>
+
+                {/* Status Badge */}
+                <div className="mb-6">
+                  <span className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-200 dark:border-blue-800">
+                    {paper.status}
+                  </span>
+                </div>
                 
+                {/* Description */}
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                   {paper.description}
                 </p>

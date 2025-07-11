@@ -18,7 +18,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full nav-blur z-50">
-      <div className="container-max">
+      <div className="container-max px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="text-xl font-semibold text-gradient">
             <Image
