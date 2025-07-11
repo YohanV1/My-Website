@@ -156,10 +156,11 @@ export default function Contact() {
               Let&apos;s Connect
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              I&apos;m always interested in new opportunities, collaborations, and interesting 
-              projects. Whether you have a question about my work at Moative, my research 
-              interests, or just want to say hi, feel free to reach out.
-            </p>
+  I'm always open to building cool things, solving hard problems, or joining forces on something new.
+  Whether you're looking to hire, need something built, or just want to say hi, I'd love to hear from you.
+  <br className="hidden sm:block" />
+  Prefer email? Reach me at <a href="mailto:yohanvvinu@gmail.com" className="underline underline-offset-2 hover:text-gray-800 dark:hover:text-white">yohanvvinu@gmail.com</a>.
+</p>
           </div>
           
           <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700">

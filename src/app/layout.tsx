@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yohan Vergis Vinu | Full-Stack ML/AI Engineer & CS Grad Student at UPenn",
+  title: "Yohan Vergis Vinu | Full-Stack ML/AI Engineer",
   description: "Full-stack AI engineer with deep startup experience, building fast, scalable, and user-focused products. CS Master's Student at University of Pennsylvania.",
   keywords: ["AI Engineer", "Machine Learning", "Full-Stack Development", "React", "Next.js", "TypeScript", "Python", "University of Pennsylvania"],
   authors: [{ name: "Yohan Vergis Vinu" }],
@@ -78,9 +78,7 @@ export default function RootLayout({
         <script defer src="https://cloud.umami.is/script.js" data-website-id="b8960906-5cc6-4b8f-ae42-55d8438a44f2"></script>
         
         {/* Dark mode override */}
-        <link rel="icon" href="/dark_mode_logo.png" media="(prefers-color-scheme: dark)" />
-        {/* Default fallback */}
-        <link rel="icon" href="/light_mode_logo.png" media="(prefers-color-scheme: light)"/>
+        <link rel="icon" href="/favicon.svg"/>
         
         {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://cloud.umami.is" />

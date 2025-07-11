@@ -7,9 +7,9 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-5xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Yohan Vergis Vinu
+            <div className="text-center lg:text-left mt-8 md:mt-0">
+              <h1 className="text-5xl md:text-5xl text-gray-900 dark:text-white mb-6 leading-tight">
+                <span className="font-bold">Yohan</span> Vergis Vinu
               </h1>
               
               <p className="text-2xl md:text-3xl text-gradient font-semibold mb-4 leading-relaxed">
@@ -20,15 +20,16 @@ export default function Hero() {
               </p>
               
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mb-8">
-              Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered.
-              </p>
+  Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively <span className="whitespace-nowrap">user-centered</span>.
+</p>
+
 
               {/* Social Badges */}
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
                 {/* Email Badge */}
                 <a 
                   href="mailto:yohanvvinu@gmail.com" 
-                  className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Email"
@@ -43,7 +44,7 @@ export default function Hero() {
                 {/* GitHub Badge */}
                 <a 
                   href="https://github.com/YohanV1" 
-                  className="inline-flex items-center justify-center w-12 h-12 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="GitHub"
@@ -57,7 +58,7 @@ export default function Hero() {
                 {/* LinkedIn Badge */}
                 <a 
                   href="https://www.linkedin.com/in/yohanvinu/" 
-                  className="inline-flex items-center justify-center w-12 h-12 bg-blue-700 hover:bg-blue-800 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="LinkedIn"
@@ -71,7 +72,7 @@ export default function Hero() {
                 {/* Resume Badge */}
                 <a 
                   href="/resume.pdf" 
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Resume"
@@ -105,7 +106,7 @@ export default function Hero() {
       </div>
       
       {/* Animated Scroll Arrow */}
-      <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
+      <div className="absolute bottom-2 md:bottom-8 inset-x-0 flex justify-center animate-bounce">
         <svg 
           className="w-6 h-6 text-gray-400 dark:text-gray-500" 
           fill="none" 

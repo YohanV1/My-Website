@@ -19,17 +19,8 @@ export default function Projects() {
       demo: 'https://moative.com/vina/',
       producthunt: 'https://www.producthunt.com/products/vina-2',
       featured: true,
-      company: 'Moative'
-    },
-    {
-      title: 'My Website!',
-      description: 'Custom-built portfolio using React, Next.js, and Tailwind CSS, designed to showcase my work. Built from scratch with a focus on performance (95+ Lighthouse), SEO, and accessibility. Includes dark mode, analytics, Open Graph metadata, and a custom 404 page. Deployed via Vercel with CI/CD.',
-      images: ['/project-images/Portfolio_1.png'],
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'ESLint', 'PostCSS', 'SendGrid', 'Vercel'],
-      github: 'https://github.com/YohanV1/My-Website',
-      demo: '#',
-      featured: true,
-      company: 'Independent'
+      company: 'Moative',
+      date: 'November 2024 - February 2025'
     },
     {
       title: 'Leslie: Municipal Permit Automation',
@@ -39,7 +30,8 @@ export default function Projects() {
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Moative'
+      company: 'Moative',
+      date: 'February 2025 - March 2025'
     },
     {
       title: 'InvoiceGPT: AI Invoice Management',
@@ -70,7 +62,8 @@ export default function Projects() {
       github: 'https://github.com/YohanV1/InvoiceGPT',
       demo: '#',
       featured: true,
-      company: 'Independent'
+      company: 'Independent',
+      date: 'August 2024 - November 2024'
     },
     {
       title: 'Billie: Multi-Channel Agentic Utility Services Chatbot',
@@ -80,27 +73,30 @@ export default function Projects() {
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Moative'
+      company: 'Moative',
+      date: 'April 2025 - June 2025'
     },
     {
-      title: 'Company/People Lookup API (Agentic RAG)',
+      title: 'Company Lookup API (Agentic RAG)',
       description: 'Built multi-agent AI system for comprehensive company intelligence gathering using FastAPI and LangChain. Implements web scraping, Google Custom Search integration, and RAG-based NAICS classification to provide detailed company profiles with industry analysis.',
       images: ['/project-images/Lookup_1.png', '/project-images/Lookup_2.png'],
       technologies: ['FastAPI', 'OpenAI (GPT)', 'Llama 3.1', 'LangChain', 'ChromaDB', 'Sentence Transformers', 'BeautifulSoup4', 'aiohttp', 'Google Custom Search API'],
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Moative'
+      company: 'Moative',
+      date: 'August 2024 - October 2024'
     },
     {
       title: 'DL-Based Pet Face Action Recognition Engine',
-      description: 'Led a team of four to develop a fine-tuned MobileNetV2-SSD model for detecting specific features of cats and dogs across 9 classes (e.g., eyes, ears, mouth) and optimized the model for on-device purposes. Compiled and annotated a custom dataset of over 10,000 images, covering over 50 dog breeds and 15 cat breeds. Achieved a 5-11% improvement in accuracy over existing methods, earning Samsung\'s Certificate of Excellence.',
+      description: 'Developed a fine-tuned MobileNetV2-SSD model for detecting specific features of cats and dogs across 9 classes (e.g., eyes, ears, mouth) optimized for on-device deployment. Compiled and annotated a custom dataset of over 10,000 images covering 50+ dog breeds and 15 cat breeds. Achieved 5-11% improvement in accuracy over existing methods through advanced model optimization and custom data augmentation techniques.',
       images: ['/project-images/Samsung_1.png'],
       technologies: ['TensorFlow 2.8', 'Keras', 'TensorFlow Object Detection API', 'MobileNetV2', 'SSD (Single Shot Detector)', 'OpenCV', 'NumPy', 'Pandas', 'CUDA 11.0', 'Label Studio'],
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Samsung R&D'
+      company: 'Samsung R&D',
+      date: 'August 2023 - March 2024'
     },
     {
       title: 'AI for CEQA: Environmental Impact Assessment',
@@ -110,7 +106,8 @@ export default function Projects() {
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Moative'
+      company: 'Moative',
+      date: 'June 2025'
     },
     {
       title: 'WinkCode: Eye Blink to Morse Code Translator',
@@ -120,7 +117,19 @@ export default function Projects() {
       github: 'https://github.com/YohanV1/WinkCode',
       demo: '#',
       featured: true,
-      company: 'Independent'
+      company: 'Independent',
+      date: 'July 2024'
+    },
+    {
+      title: 'My Website!',
+      description: 'Custom-built portfolio using React, Next.js, and Tailwind CSS, designed to showcase my work. Built from scratch with a focus on performance (95+ Lighthouse), SEO, and accessibility. Includes dark mode, analytics, Open Graph metadata, and a custom 404 page. Deployed via Vercel with CI/CD.',
+      images: ['/project-images/Portfolio_2.png'],
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'ESLint', 'PostCSS', 'SendGrid', 'Vercel'],
+      github: 'https://github.com/YohanV1/My-Website',
+      demo: '#',
+      featured: true,
+      company: 'Independent',
+      date: 'June 2025 - Present'
     },
   ];
 
@@ -170,9 +179,9 @@ export default function Projects() {
           {currentProjects.map((project, index) => (
             <div
               key={`${currentPage}-${index}`}
-              className={`bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg ${
+              className={`bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-500 ease-out hover:translate-y-[-8px] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-blue-500/20 ${
                 project.featured ? 'ring-2 ring-gray-300 dark:ring-gray-600' : ''
-              } h-full flex flex-col justify-between`}
+              } h-full flex flex-col justify-between transform hover:scale-[1.02]`}
             >
               <ProjectImageCarousel 
                 key={`${currentPage}-${index}-carousel-${renderKey}`}
@@ -184,8 +193,11 @@ export default function Projects() {
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                     {project.company === 'Independent' ? 'Independent Project' : `Built at ${project.company}`}
+                  </p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500 mb-4 italic">
+                    {project.date}
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                     {project.description}

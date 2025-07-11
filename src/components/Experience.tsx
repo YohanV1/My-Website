@@ -6,17 +6,15 @@ export default function Experience() {
       title: 'Full-Stack ML/AI Engineer',
       company: 'Moative',
       logo: '/moative.png',
-      period: '2023 - Present',
-      description: '• Led full-stack development and drove end-to-end build and launch of multiple GenAI products, PoCs, and demos\n• Developed AI-enabled GovTech tools, HR assistants, dashboards, backends, and agentic chat and voice bots for large-scale utility companies in the U.S',
-      technologies: ['React', 'Node.js', 'Python', 'OpenAI API', 'LangChain', 'AWS', 'PostgreSQL']
+      period: 'August 2024 - June 2025',
+      description: '• Led full-stack development and drove end-to-end build and launch of 5+ GenAI products, PoCs, and demos for enterprise clients\n• Developed AI-enabled GovTech tools (Leslie), HR assistants (Vina), dashboards, backends, and agentic chat and voice bots (Billie) for large-scale utility companies in the U.S\n• Built comprehensive company intelligence systems using multi-agent AI architecture with RAG capabilities\n• Implemented environmental impact assessment tools (CEQA) using document analysis and recommendation generation\n• Orchestrated complete development lifecycle from research and prototyping to production deployment and client delivery\n• Collaborated with cross-functional teams to ensure seamless integration of AI solutions with existing enterprise infrastructure'
     },
     {
-      title: 'Computer Vision Engineer',
+      title: 'ML Engineer',
       company: 'Samsung R&D Institute India',
       logo: '/samsung.png',
-      period: '2022 - 2023',
-      description: '• Led a team of four to develop a fine-tuned MobileNetV2-SSD model for detecting specific features of cats and dogs across 9 classes (e.g., eyes, ears, mouth) and optimized the model for on-device purposes\n• Compiled and annotated a custom dataset of over 10,000 images, covering over 50 dog breeds and 15 cat breeds\n• Achieved a 5-11% improvement in accuracy over existing methods, earning Samsung\'s Certificate of Excellence',
-      technologies: ['TensorFlow 2.8', 'Keras', 'TensorFlow Object Detection API', 'MobileNetV2', 'SSD (Single Shot Detector)', 'OpenCV', 'NumPy', 'Pandas', 'CUDA 11.0', 'Label Studio'],
+      period: 'August 2023 - March 2024',
+      description: '• Led a team of four engineers to develop an AI-powered pet face recognition system, managing project timeline, technical direction, and stakeholder communication\n• Orchestrated end-to-end development from research to deployment, including dataset curation, model development, and performance optimization\n• Delivered 5-11% accuracy improvement over existing methods, earning Samsung\'s Certificate of Excellence and a 1,000$ award',
       reference: {
         text: "Featured in SRM IST's Newsletter",
         url: 'https://webstor.srmist.edu.in/web_assets/downloads/2025/smart-sprinklers-volu4-issue1.pdf#page=14'
@@ -53,17 +51,16 @@ export default function Experience() {
                       </div>
                     )}
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                         {exp.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 font-medium">
+                      <p className="text-gray-600 dark:text-gray-300 font-medium mb-1">
                         {exp.company}
                       </p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {exp.period}
+                      </p>
                     </div>
-                  </div>
-                  
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-4 bg-gray-100 dark:bg-gray-600 px-3 py-1 rounded-full inline-block">
-                    {exp.period}
                   </div>
                   
                   <div className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
@@ -90,16 +87,6 @@ export default function Experience() {
                     </div>
                   )}
                   
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors duration-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}
