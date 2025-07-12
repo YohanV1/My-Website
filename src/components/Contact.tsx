@@ -12,7 +12,8 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    honeypot: '' // Hidden field to catch bots
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,6 +45,8 @@ export default function Contact() {
       newErrors.message = 'Message is required';
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters';
+    } else if (formData.message.trim().length > 5000) {
+      newErrors.message = 'Message is too long (max 5000 characters)';
     }
 
     setErrors(newErrors);
@@ -67,7 +70,12 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          honeypot: formData.honeypot // Include honeypot field
+        }),
       });
 
       const data = await response.json();
@@ -75,7 +83,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage(data.message || 'Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', honeypot: '' });
         setErrors({});
       } else {
         setSubmitStatus('error');
@@ -137,6 +145,8 @@ export default function Contact() {
         setErrors(prev => ({ ...prev, message: 'Message is required' }));
       } else if (value.trim().length < 10) {
         setErrors(prev => ({ ...prev, message: 'Message must be at least 10 characters' }));
+      } else if (value.trim().length > 5000) {
+        setErrors(prev => ({ ...prev, message: 'Message is too long (max 5000 characters)' }));
       } else {
         setErrors(prev => ({ ...prev, message: undefined }));
       }
@@ -166,6 +176,19 @@ export default function Contact() {
           
           <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+              {/* Honeypot field - hidden from users but visible to bots */}
+              <div className="absolute left-[-9999px] top-[-9999px]">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+              </div>
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Name
@@ -183,6 +206,7 @@ export default function Contact() {
                       : 'border-gray-300 dark:border-gray-600'
                   }`}
                   disabled={isSubmitting}
+                  autoComplete="name"
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
@@ -196,7 +220,7 @@ export default function Contact() {
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   value={formData.email}
@@ -208,6 +232,7 @@ export default function Contact() {
                       : 'border-gray-300 dark:border-gray-600'
                   }`}
                   disabled={isSubmitting}
+                  autoComplete="email"
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
@@ -233,12 +258,16 @@ export default function Contact() {
                       : 'border-gray-300 dark:border-gray-600'
                   }`}
                   disabled={isSubmitting}
+                  placeholder="What's on your mind?"
                 />
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
                     {errors.message}
                   </p>
                 )}
+                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  {formData.message.length}/5000 characters
+                </p>
               </div>
               
               {submitStatus !== 'idle' && (
