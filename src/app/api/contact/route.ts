@@ -5,7 +5,7 @@ import sgMail from '@sendgrid/mail';
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
 const RATE_LIMIT = {
-  maxRequests: 5,
+  maxRequests: 20, // Increased from 5
   windowMs: 15 * 60 * 1000, // 15 minutes
 };
 
@@ -41,36 +41,29 @@ interface RequestBody {
   name?: string;
   email?: string;
   message?: string;
-  honeypot?: string;
+  website?: string; // Renamed from honeypot
 }
 
 function validateRequest(body: RequestBody): { isValid: boolean; error?: string } {
-  // Check for honeypot field
-  if (body.honeypot && body.honeypot.trim() !== '') {
+  // Check for honeypot field (now 'website')
+  if (body.website && body.website.trim() !== '') {
     return { isValid: false, error: 'Invalid submission' };
   }
-  
-  // Check for suspicious patterns
+
+  // Check for excessive length (relaxed to 10,000 chars)
   const { message } = body;
-  
-  // Check for excessive length (likely spam)
-  if (message && message.length > 5000) {
+  if (message && message.length > 10000) {
     return { isValid: false, error: 'Message too long' };
   }
-  
-  // Check for suspicious keywords (basic example)
-  const spamKeywords = ['viagra', 'casino', 'loan', 'credit', 'make money fast'];
-  const messageLower = message?.toLowerCase() || '';
-  if (spamKeywords.some(keyword => messageLower.includes(keyword))) {
-    return { isValid: false, error: 'Message contains inappropriate content' };
-  }
-  
-  // Check for excessive links
-  const linkCount = (message?.match(/https?:\/\/[^\s]+/g) || []).length;
-  if (linkCount > 3) {
+
+  // Allow up to 10 links (relaxed from 3)
+  const linkCount = (message?.match(/https?:\/\/[\S]+/g) || []).length;
+  if (linkCount > 10) {
     return { isValid: false, error: 'Too many links in message' };
   }
-  
+
+  // Removed spam keyword filtering and disposable email domain check
+
   return { isValid: true };
 }
 
@@ -126,16 +119,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    
-    // Check for disposable email domains (basic example)
-    const disposableDomains = ['tempmail.org', '10minutemail.com', 'guerrillamail.com'];
-    const emailDomain = trimmedEmail.split('@')[1];
-    if (disposableDomains.includes(emailDomain)) {
-      return NextResponse.json(
-        { error: 'Please use a valid email address' },
-        { status: 400 }
-      );
-    }
+
+    // Removed disposable email domain check
 
     // Sanitize inputs to prevent XSS
     const sanitizeHtml = (str: string) => {

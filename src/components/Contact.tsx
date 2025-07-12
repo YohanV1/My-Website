@@ -13,7 +13,7 @@ export default function Contact() {
     name: '',
     email: '',
     message: '',
-    honeypot: '' // Hidden field to catch bots
+    website: '' // Hidden field to catch bots (renamed from honeypot)
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,7 +74,7 @@ export default function Contact() {
           name: formData.name.trim(),
           email: formData.email.trim(),
           message: formData.message.trim(),
-          honeypot: formData.honeypot // Include honeypot field
+          website: formData.website // Renamed from honeypot
         }),
       });
 
@@ -83,7 +83,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage(data.message || 'Message sent successfully!');
-        setFormData({ name: '', email: '', message: '', honeypot: '' });
+        setFormData({ name: '', email: '', message: '', website: '' });
         setErrors({});
       } else {
         setSubmitStatus('error');
@@ -180,8 +180,8 @@ export default function Contact() {
               <div className="absolute left-[-9999px] top-[-9999px]">
                 <input
                   type="text"
-                  name="honeypot"
-                  value={formData.honeypot}
+                  name="website" // Renamed from honeypot
+                  value={formData.website}
                   onChange={handleChange}
                   tabIndex={-1}
                   autoComplete="off"
