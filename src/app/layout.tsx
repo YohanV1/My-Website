@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://yohanvv.com"),
+  metadataBase: new URL("https://yohanvvinu.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Yohan Vergis Vinu - Full-Stack ML/AI Engineer",
     description: "Full-stack AI engineer with deep startup experience, building fast, scalable, and user-focused products. CS Master's Student at University of Pennsylvania.",
-    url: "https://yohanvv.com",
+    url: "https://yohanvvinu.com",
     siteName: "Yohan Vergis Vinu Portfolio",
     images: [
       {
@@ -58,11 +58,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
   },
 };
 

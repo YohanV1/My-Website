@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yohanvv.com/</loc>
+    <loc>https://yohanvvinu.com/</loc>
     <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yohanvv.com/#about</loc>
+    <loc>https://yohanvvinu.com/#about</loc>
     <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yohanvv.com/#experience</loc>
+    <loc>https://yohanvvinu.com/#experience</loc>
     <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yohanvv.com/#projects</loc>
+    <loc>https://yohanvvinu.com/#projects</loc>
     <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yohanvv.com/#contact</loc>
+    <loc>https://yohanvvinu.com/#research</loc>
+    <lastmod>2025-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yohanvvinu.com/#extracurricular</loc>
+    <lastmod>2025-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yohanvvinu.com/#contact</loc>
     <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
