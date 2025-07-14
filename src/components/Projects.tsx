@@ -219,6 +219,8 @@ export default function Projects() {
                       {project.github !== '#' && (
                         <a
                           href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
                         >
                           GitHub →
@@ -227,6 +229,8 @@ export default function Projects() {
                       {project.demo !== '#' && (
                         <a
                           href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
                         >
                           Live Demo →
@@ -235,6 +239,8 @@ export default function Projects() {
                       {project.producthunt && (
                         <a
                           href={project.producthunt}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
                         >
                           Product Hunt →

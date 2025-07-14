@@ -12,8 +12,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '',
-    website: '' // Hidden field to catch bots (renamed from honeypot)
+    message: ''
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,8 +72,7 @@ export default function Contact() {
         body: JSON.stringify({
           name: formData.name.trim(),
           email: formData.email.trim(),
-          message: formData.message.trim(),
-          website: formData.website // Renamed from honeypot
+          message: formData.message.trim()
         }),
       });
 
@@ -83,7 +81,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage(data.message || 'Message sent successfully!');
-        setFormData({ name: '', email: '', message: '', website: '' });
+        setFormData({ name: '', email: '', message: '' });
         setErrors({});
       } else {
         setSubmitStatus('error');
@@ -176,18 +174,7 @@ export default function Contact() {
           
           <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              {/* Honeypot field - hidden from users but visible to bots */}
-              <div className="absolute left-[-9999px] top-[-9999px]">
-                <input
-                  type="text"
-                  name="website" // Renamed from honeypot
-                  value={formData.website}
-                  onChange={handleChange}
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                />
-              </div>
+              {/* Honeypot field removed */}
               
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">

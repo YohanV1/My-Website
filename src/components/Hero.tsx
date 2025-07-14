@@ -71,7 +71,7 @@ export default function Hero() {
 
                 {/* Resume Badge */}
                 <a 
-                  href="/resume.pdf" 
+                  href="/Yohan_Vergis_Vinu_Resume.pdf" 
                   className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
                   target="_blank"
                   rel="noopener noreferrer"

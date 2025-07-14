@@ -5,7 +5,7 @@ import sgMail from '@sendgrid/mail';
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
 const RATE_LIMIT = {
-  maxRequests: 20, // Increased from 5
+  maxRequests: 7, // Reduced from 20
   windowMs: 15 * 60 * 1000, // 15 minutes
 };
 
@@ -41,18 +41,14 @@ interface RequestBody {
   name?: string;
   email?: string;
   message?: string;
-  website?: string; // Renamed from honeypot
 }
 
 function validateRequest(body: RequestBody): { isValid: boolean; error?: string } {
-  // Check for honeypot field (now 'website')
-  if (body.website && body.website.trim() !== '') {
-    return { isValid: false, error: 'Invalid submission' };
-  }
+  // Honeypot check removed
 
-  // Check for excessive length (relaxed to 10,000 chars)
+  // Check for excessive length (reduced to 5,000 chars)
   const { message } = body;
-  if (message && message.length > 10000) {
+  if (message && message.length > 5000) {
     return { isValid: false, error: 'Message too long' };
   }
 
@@ -61,8 +57,6 @@ function validateRequest(body: RequestBody): { isValid: boolean; error?: string 
   if (linkCount > 10) {
     return { isValid: false, error: 'Too many links in message' };
   }
-
-  // Removed spam keyword filtering and disposable email domain check
 
   return { isValid: true };
 }
