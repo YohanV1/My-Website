@@ -27,11 +27,11 @@ export default function Research() {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 gap-8">
+        <div className="space-y-12">
           {research.map((paper, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:translate-x-1 hover:shadow-lg dark:hover:shadow-blue-500/20 border-l-4 border-l-gray-900 dark:border-l-blue-400"
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:translate-x-1 hover:shadow-lg dark:hover:shadow-blue-500/20 border-l-4 border-l-gray-300 dark:border-l-gray-600 hover:border-l-4 hover:border-l-gray-900 dark:hover:border-l-blue-400"
             >
               <div className="p-8">
                 {/* Title */}

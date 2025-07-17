@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Yohan Vergis Vinu - Full-Stack ML/AI Engineer",
-    description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at University of Pennsylvania.",
+    description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania.",
     url: "https://yohanvvinu.com",
     siteName: "Yohan Vergis Vinu Portfolio",
     images: [
@@ -82,7 +82,7 @@ export default function RootLayout({
         <meta name="description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania." />
         <meta name="keywords" content="AI/ML Engineer, Machine Learning, Full-Stack Development, React, Next.js, TypeScript, Python, University of Pennsylvania" />
         <meta property="og:title" content="Yohan Vergis Vinu - Full-Stack ML/AI Engineer" />
-        <meta property="og:description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at University of Pennsylvania." />
+        <meta property="og:description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania." />
         <meta property="og:url" content="https://yohanvvinu.com" />
         <meta property="og:image" content="https://yohanvvinu.com/card.png" />
         <meta name="twitter:card" content="summary_large_image" />

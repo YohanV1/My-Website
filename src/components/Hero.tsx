@@ -16,7 +16,7 @@ export default function Hero() {
                 Full-Stack ML/AI Engineer
               </p>
               <p className="text-xl text-gray-500 dark:text-gray-400 mb-6">
-              MSE CIS @ UPenn | Incoming Fall ’25
+              MSE CIS @ UPenn
               </p>
               
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mb-8">
