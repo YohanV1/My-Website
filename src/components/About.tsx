@@ -199,7 +199,7 @@ export default function About() {
         <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed italic pl-6">
           <p>
             Yohan interned with Moative for close to a year. He was there from Day 1 and he over-delivered.
-            He was a true 'Day 1' engineer, who is totally at home with partial information, frequently changing/conflicting directions, and the newness of everything he had to do.
+            He was a true &apos;Day 1&apos; engineer, who is totally at home with partial information, frequently changing/conflicting directions, and the newness of everything he had to do.
           </p>
           <p>
             In this context, he consistently delivered perfect outcomes with little supervision in traditional sense.
