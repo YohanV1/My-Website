@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import ProjectImageCarousel from './ProjectImageCarousel';
 
 // Project interface to replace 'any' types
@@ -59,6 +60,7 @@ const ProjectModal = ({
   onClose: () => void; 
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Close modal on escape key
   useEffect(() => {
@@ -121,11 +123,77 @@ const ProjectModal = ({
         {/* Content */}
         <div className="p-6 pt-0">
           {/* Project Images */}
-          <div className="mb-6">
-            <ProjectImageCarousel 
-              images={project.images} 
-              projectTitle={project.title} 
-            />
+          <div className="mb-6 mt-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div className="aspect-video relative">
+                {project.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${project.title} - Image ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                    />
+                  </div>
+                ))}
+                
+                {/* Navigation Arrows */}
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => setCurrentImageIndex(prev => prev === 0 ? project.images.length - 1 : prev - 1)}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-200 hover:scale-110"
+                      aria-label="Previous image"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    
+                    <button
+                      onClick={() => setCurrentImageIndex(prev => prev === project.images.length - 1 ? 0 : prev + 1)}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-200 hover:scale-110"
+                      aria-label="Next image"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+
+                {/* Dots Indicator */}
+                {project.images.length > 1 && (
+                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {project.images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                          index === currentImageIndex
+                            ? 'bg-white scale-125'
+                            : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                        }`}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Image Counter */}
+                {project.images.length > 1 && (
+                  <div className="absolute top-3 right-3 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+                    {currentImageIndex + 1} / {project.images.length}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Description */}

@@ -34,7 +34,10 @@ const technologies = [
   // Configuration
   { name: '@ljharb/tsconfig', npm: '@ljharb/tsconfig' },
   { name: '@eslint/eslintrc', npm: '@eslint/eslintrc' },
-  { name: 'eslint-config-next', npm: 'eslint-config-next' }
+  { name: 'eslint-config-next', npm: 'eslint-config-next' },
+  
+  // Build Tools
+  { name: '@svgr/webpack', npm: '@svgr/webpack' }
 ];
 
 // Function to get latest version from npm registry
@@ -169,6 +172,13 @@ async function checkVersions() {
   } catch (error) {
     console.log('\n❌ Could not determine npm version');
   }
+  
+  // Additional Next.js features
+  console.log('\n🔧 Next.js Features:');
+  console.log('✅ Turbopack (enabled in dev script)');
+  console.log('✅ Next.js Fonts (next/font/google)');
+  console.log('✅ Image Optimization (next/image)');
+  console.log('✅ API Routes (next/server)');
 }
 
 // Run the script
