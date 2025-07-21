@@ -4,7 +4,7 @@ export default function Research() {
   const research = [
     {
       title: 'Synthetic Data Generation and Neural Ensemble Architectures for Personal Expenditure Forecasting',
-      description: 'Final-year research project comparing deep learning models for forecasting personal expenditures using a custom synthetic dataset generated via a graph-based LLM workflow. The study evaluated models including Dense Networks, Conv1D, LSTM, and N-BEATS, and introduced a custom neural ensemble method that outperformed all others in predictive accuracy across 15,000 synthetic invoices spanning 37 expense categories.',
+      description: 'Final-year undergraduate research project comparing deep learning models for forecasting personal expenditures using a custom synthetic dataset generated via a graph-based LLM workflow. The study evaluated models including Dense Networks, Conv1D, LSTM, and N-BEATS, and introduced a custom neural ensemble method that outperformed all others in predictive accuracy across 15,000 synthetic invoices spanning 37 expense categories.',
       authors: [
         { name: 'Yohan Vergis Vinu', bold: true },
         { name: 'Shaurya Mehrotra', bold: false },

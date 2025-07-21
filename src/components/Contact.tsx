@@ -161,11 +161,11 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Let&apos;s Connect
+              Let&apos;s Talk
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-  I&apos;m always open to building cool things, solving hard problems, or joining forces on something new.
-  Whether you&apos;re looking to hire, need something built, or just want to say hi, I&apos;d love to hear from you.
+            I&apos;m usually building, tinkering, or thinking about the next thing to build.
+            If you want to team up, talk product, or just bounce ideas, I&apos;m around.
 </p>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
   Prefer email? Reach me at <a href="mailto:yohanvvinu@gmail.com" className="underline underline-offset-2 hover:text-gray-800 dark:hover:text-white">yohanvvinu@gmail.com</a>.

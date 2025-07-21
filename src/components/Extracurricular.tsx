@@ -57,7 +57,7 @@ export default function Extracurricular() {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-500 dark:text-gray-400">Jun 2022 – Jun 2023</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">June 2022 – June 2023</p>
                           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mt-2">
                             Building a maker mindset through hands-on exploration of engineering, hardware design, and STEAM skills.
                           </p>
@@ -179,24 +179,17 @@ export default function Extracurricular() {
               {expandedSections.campus && (
                 <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
                   <div className="space-y-6">
+                  <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">The Institution of Engineers (India) [IEI]</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Member</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">August 2023 - June 2025</p>
+                    </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">IEEE SRMIST Student Branch</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300">R&D & Computer Society Member</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Mar 2023 - Jun 2024</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">March 2023 - June 2024</p>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">The Institution of Engineers (India) [IEI]</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Member</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Aug 2023 - Present</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">Aaruush, SRMIST</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Initiatives Committee Member</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Apr 2022 - Apr 2023</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-                      • Part of Initiatives, an Aaruush committee, that carries out CSR activities, social campaigns and flagship events.
-                      </p>
-                    </div>
+
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">IoT Developer & Member</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300">Think-Digital, SRMIST</p>
@@ -208,6 +201,15 @@ export default function Extracurricular() {
                       • Facilitated training workshops on embedded systems fundamentals for incoming team members.
                       </p>
                     </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">Aaruush, SRMIST</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Initiatives Committee Member</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">April 2022 - April 2023</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                      • Part of Initiatives, an Aaruush committee, that carries out CSR activities, social campaigns and flagship events.
+                      </p>
+                    </div>
+
                   </div>
                 </div>
               )}

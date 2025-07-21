@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Yohan Vergis Vinu - Full-Stack ML/AI Engineer",
     description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania.",
     url: "https://yohanvvinu.com",
-    siteName: "Yohan Vergis Vinu Portfolio",
+    siteName: "Yohan Vergis Vinu's Website",
     images: [
       {
         url: "/card.png",
