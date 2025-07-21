@@ -1,4 +1,4 @@
-# Yohan Vergis Vinu – AI Engineer Portfolio
+# Yohan Vergis Vinu's Website
 
 A modern, high-performance portfolio website for an AI/ML engineer, built with Next.js, React, and Tailwind CSS. This template is designed for engineers and developers who want to showcase their projects, research, and experience with a focus on speed, accessibility, and developer experience.
 
