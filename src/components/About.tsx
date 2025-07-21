@@ -49,6 +49,71 @@ export default function About() {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Education Content */}
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+                Education
+              </h3>
+              <div className="space-y-6">
+                <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-600">
+                  <div className="">
+                    <div className="flex-1">
+                      <div className="relative">
+                        <a href="https://www.cis.upenn.edu/graduate/program-offerings/mse-in-cis/" target="_blank" rel="noopener noreferrer" className="block float-right ml-6 mb-2 w-24 h-24 sm:w-32 sm:h-32">
+                          <div className="bg-white p-2 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 w-full h-full flex items-center justify-center">
+                            <Image 
+                              src="/upenn.png" 
+                              alt="University of Pennsylvania logo" 
+                              width={128}
+                              height={128}
+                              className="object-contain w-full h-full"
+                            />
+                          </div>
+                        </a>
+                        <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                          Master of Science in Engineering, Computer and Information Science (CIS/MSE)
+                        </div>
+                        <div className="text-gray-700 dark:text-gray-200 font-medium mb-1">University of Pennsylvania</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Expected May 2027</div>
+                        <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-300">
+                          Machine Learning, Software Systems, Internet and Web Systems
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-600">
+                  <div className="">
+                    <div className="flex-1">
+                      <div className="relative">
+                        <a href="https://www.srmist.edu.in/program/b-tech-computer-science-and-engineering/" target="_blank" rel="noopener noreferrer" className="block float-right ml-6 mb-2 w-24 h-24 sm:w-32 sm:h-32">
+                          <div className="bg-white p-2 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 w-full h-full flex items-center justify-center">
+                            <Image 
+                              src="/srm.png" 
+                              alt="SRM IST Chennai logo" 
+                              width={128}
+                              height={128}
+                              className="object-contain w-full h-full"
+                            />
+                          </div>
+                        </a>
+                        <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                          Bachelor of Technology, Computer Science and Engineering (B.Tech CSE)
+                        </div>
+                        <div className="text-gray-700 dark:text-gray-200 font-medium mb-1">SRM Institute of Science and Technology</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">August 2021 - May 2025</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Grade: 9.80/10 (US equivalent: 4.0/4.0)</div>
+                        <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-300">
+                          Intro to ML, Digital Image Processing, Data Mining and Analytics, AI, Database Management Systems
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* About Me Content */}
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
@@ -70,72 +135,6 @@ export default function About() {
                 <p>
                   My primary interests lie in applied AI, particularly agentic and multimodal systems that are refined through thoughtful, user-centric UI/UX design.
                 </p>
-              </div>
-            </div>
-            
-            {/* Education Content */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                Education
-              </h3>
-              <div className="space-y-6">
-                <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-600">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <a href="https://www.cis.upenn.edu/graduate/program-offerings/mse-in-cis/" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
-                        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600">
-                          <Image 
-                            src="/upenn.png" 
-                            alt="University of Pennsylvania logo" 
-                            width={112}
-                            height={112}
-                            className="w-24 h-24 object-contain"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        Master of Science in Engineering, Computer and Information Science (CIS/MSE)
-                      </div>
-                      <div className="text-gray-700 dark:text-gray-200 font-medium mb-1">University of Pennsylvania</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Expected May 2027</div>
-                      <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">
-                        Machine Learning, Software Systems, Internet and Web Systems
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-600">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <a href="https://www.srmist.edu.in/program/b-tech-computer-science-and-engineering/" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
-                        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600">
-                          <Image 
-                            src="/srm.png" 
-                            alt="SRM IST Chennai logo" 
-                            width={112}
-                            height={112}
-                            className="w-24 h-24 object-contain"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        Bachelor of Technology, Computer Science and Engineering (B.Tech CSE)
-                      </div>
-                      <div className="text-gray-700 dark:text-gray-200 font-medium mb-1">SRM Institute of Science and Technology</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">August 2021 - May 2025</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Grade: 9.80/10 (US equivalent: 4.0/4.0)</div>
-                      <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">
-                        Intro to ML, Digital Image Processing, Data Mining and Analytics, AI, Database Management Systems
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
