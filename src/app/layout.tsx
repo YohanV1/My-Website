@@ -69,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <title>Yohan Vergis Vinu | Full-Stack ML/AI Engineer</title>
         {/* Umami Analytics */}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="b8960906-5cc6-4b8f-ae42-55d8438a44f2"></script>
         

@@ -135,10 +135,10 @@ export async function POST(request: NextRequest) {
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       
       await sgMail.send({
-        to: process.env.CONTACT_EMAIL || 'your-email@example.com',
-        from: process.env.VERIFIED_SENDER || 'hello@yohanvvinu.com',
+        to: process.env.CONTACT_EMAIL || 'your@email.com',
+        from: process.env.VERIFIED_SENDER || 'hello@yourdomain.com',
         replyTo: sanitizedEmail,
-        subject: `Portfolio Contact Form Submission From: ${sanitizedName}`,
+        subject: `My Website's Contact Form Submission From: ${sanitizedName}`,
         text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
         html: `
           <p><strong>Name:</strong> ${sanitizedName}</p>
