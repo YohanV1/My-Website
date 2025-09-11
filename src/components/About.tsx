@@ -121,7 +121,7 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  I&apos;m Master&apos;s student in Computer Science at the University of Pennsylvania&apos;s School of Engineering and Applied Science (Penn Engineering). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
+                  I&apos;m a Master&apos;s student in Computer Science at the University of Pennsylvania&apos;s School of Engineering and Applied Science (Penn Engineering). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
                 </p>
                 <p>
                   At Moative (an AI startup), I led full-stack development and drove the end-to-end build and launch of multiple GenAI products, PoCs, and demos, including AI-enabled GovTech tools, HR assistants, dashboards, backend systems, and agentic chat/voice bots for large U.S. utility companies. One of the projects I led, Vina, is now live on Product Hunt.
