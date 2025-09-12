@@ -77,7 +77,7 @@ export default function About() {
                         <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Expected May 2027</div>
                         <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
-                          Machine Learning, Software Systems, Internet and Web Systems
+                          Applied Machine Learning, Big Data Analytics, Internet and Web Systems
                         </div>
                       </div>
                     </div>
