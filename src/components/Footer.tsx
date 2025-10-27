@@ -97,7 +97,7 @@ export default function Footer() {
                 © 2025 Yohan Vergis Vinu. All rights reserved.
               </p>
               <p className="text-gray-500 text-sm">
-                Last updated September 2025 • Built with Next.js, React, TypeScript & Tailwind CSS
+                Last updated October 2025 • Built with Next.js, React, TypeScript & Tailwind CSS
               </p>
             </div>
           </div>
