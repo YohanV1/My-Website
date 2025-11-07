@@ -11,7 +11,7 @@ export default function Experience() {
     },
     {
       title: 'Machine Learning Engineer Intern',
-      company: 'Samsung R&D Institute India',
+      company: 'Samsung Research, India',
       logo: '/samsung.png',
       period: 'August 2023 - March 2024',
       description: '• Led a team of four engineers to develop an AI-powered pet face recognition system, managing project timeline, technical direction, and stakeholder communication\n• Orchestrated end-to-end development from research to deployment, including dataset curation, model development, and performance optimization\n• Delivered 5-11% accuracy improvement over existing methods, earning Samsung\'s Certificate of Excellence and a 1,000$ award',

@@ -419,7 +419,7 @@ export default function Projects() {
       github: '#',
       demo: '#',
       featured: true,
-      company: 'Samsung R&D',
+      company: 'Samsung Research, India',
       date: 'August 2023 - March 2024'
     },
     {
