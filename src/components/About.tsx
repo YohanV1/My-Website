@@ -127,7 +127,7 @@ export default function About() {
                   At Moative (an AI startup), I led full-stack development and drove the end-to-end build and launch of multiple GenAI products, PoCs, and demos, including AI-enabled GovTech tools, HR assistants, dashboards, backend systems, and agentic chat/voice bots for large U.S. utility companies. One of the projects I led, Vina, is now live on Product Hunt.
                 </p>
                 <p>
-                  Previously, at Samsung R&amp;D, I spearheaded a computer vision research project in the PetTech domain. Our team received a Certificate of Excellence and a $1,000 award for our work.
+                  Previously, at Samsung Research, I spearheaded a computer vision research project in the PetTech domain. Our team received a Certificate of Excellence and a $1,000 award for our work.
                 </p>
                 <p>
                   During my undergraduate degree, I was an eight-time elected class representative (Best CR award recipient) and led the Networking Nexus student club, organizing and serving as the keynote speaker for hands-on IoT workshops attended by 150+ students.
