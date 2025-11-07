@@ -3,14 +3,14 @@ import Image from 'next/image';
 export default function Experience() {
   const experiences = [
     {
-      title: 'Full-Stack ML/AI Engineer',
+      title: 'Software Engineer Intern, Applied AI',
       company: 'Moative',
       logo: '/moative.png',
       period: 'August 2024 - June 2025',
       description: '• Drove end-to-end development of 6+ GenAI products, from idea to production, across agentic HR tools (Vina), municipal permit automation (Leslie), and multimodal chat/voice bots (Billie), built for local governments and enterprise utilities across the U.S\n• Took ownership across the stack: drafted PRDs, wrote clean full-stack code (Django, LangGraph, AWS), fine-tuned AI workflows, and shipped products on Product Hunt\n• Built backend infrastructure with secure multi-tenant support, robust CI/CD, real-time analytics, and cloud-native deployments via Docker + AWS\n• Delivered live client demos, handled CEO-level communication, and recorded product walkthroughs for external stakeholders\n• Designed UIs, tested flows, and wrote technical blog content to explain AI systems\n• Owned the dev process from research → prototyping → infra → integration → client delivery',
     },
     {
-      title: 'ML Engineer',
+      title: 'Machine Learning Engineer Intern',
       company: 'Samsung R&D Institute India',
       logo: '/samsung.png',
       period: 'August 2023 - March 2024',

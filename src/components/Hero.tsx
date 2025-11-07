@@ -13,7 +13,7 @@ export default function Hero() {
               </h1>
               
               <p className="text-2xl md:text-3xl text-gradient font-semibold mb-4 leading-relaxed">
-                Full-Stack ML/AI Engineer
+                Software Engineer
               </p>
               <p className="text-xl text-gray-500 dark:text-gray-400 mb-6">
               MSE CIS @ UPenn

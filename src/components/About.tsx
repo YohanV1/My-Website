@@ -130,7 +130,7 @@ export default function About() {
                   Previously, at Samsung R&amp;D, I spearheaded a computer vision research project in the PetTech domain. Our team received a Certificate of Excellence and a $1,000 award for our work.
                 </p>
                 <p>
-                  During my undergraduate degree, I was a four-time elected class representative (Best CR award recipient) and led the Networking Nexus student club, organizing and serving as the keynote speaker for hands-on IoT workshops attended by 150+ students.
+                  During my undergraduate degree, I was an eight-time elected class representative (Best CR award recipient) and led the Networking Nexus student club, organizing and serving as the keynote speaker for hands-on IoT workshops attended by 150+ students.
                 </p>
                 <p>
                   My primary interests lie in applied AI, particularly agentic and multimodal systems that are refined through thoughtful, user-centric UI/UX design.
