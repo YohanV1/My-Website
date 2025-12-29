@@ -11,7 +11,7 @@ A modern, high-performance portfolio website for an AI/ML engineer, built with N
 - **Performance-Obsessed**: 95+ Lighthouse scores, lazy loading, image optimization, and bundle analysis.
 - **Accessible & SEO-Friendly**: Semantic HTML, WCAG compliance, Open Graph, and Twitter meta tags.
 - **Customizable Sections**: About, Experience, Projects, Research, Extracurricular, and Contact.
-- **Contact Form**: Secure, rate-limited, and spam-resistant contact form with SendGrid integration.
+- **Contact Form**: Secure, rate-limited, and spam-resistant contact form with Resend integration.
 - **Analytics**: Umami analytics integration for privacy-friendly tracking.
 - **Developer Experience**: ESLint, Prettier, PostCSS, and CI/CD ready for Vercel or Netlify.
 - **Production-Grade**: Security headers, rate limiting, and best practices throughout.
@@ -33,7 +33,7 @@ A modern, high-performance portfolio website for an AI/ML engineer, built with N
 ## Tech Stack
 
 - **Frontend**: Next.js 14, React 19, TypeScript, Tailwind CSS
-- **Backend/API**: Next.js API routes, SendGrid (contact form)
+- **Backend/API**: Next.js API routes, Resend (contact form)
 - **DevOps**: Vercel
 - **Tooling**: ESLint, Prettier, PostCSS, Turbopack, Sharp (image compression)
 - **Analytics**: Umami
@@ -87,14 +87,14 @@ A modern, high-performance portfolio website for an AI/ML engineer, built with N
 - **Research/Extracurricular**: Update arrays in their respective components.
 - **Theme & Colors**: Modify `src/app/globals.css` and Tailwind config.
 - **Images**: Replace or add images in `public/` and `public/project-images/`.
-- **Contact Form**: Configure SendGrid API keys and sender/recipient emails via environment variables.
+- **Contact Form**: Configure Resend API keys and sender/recipient emails via environment variables.
 - **Analytics**: Update Umami website ID in `src/app/layout.tsx` if needed.
 
 ---
 
 ## Security & Best Practices
 
-- **Contact Form**: Rate-limited, XSS-sanitized, and validates input. Uses SendGrid for email delivery.
+- **Contact Form**: Rate-limited, XSS-sanitized, and validates input. Uses Resend for email delivery.
 - **SEO**: Open Graph, Twitter, and canonical meta tags.
 - **Accessibility**: Semantic HTML, color contrast, keyboard navigation.
 - **CI/CD**: Ready for Vercel, Netlify, or custom Docker deployment.
@@ -135,10 +135,12 @@ MIT License – Feel free to use, modify, and deploy this template for your own 
 - Before deploying or sharing your site, set up a `.env` file in your project root:
 
 ```env
-SENDGRID_API_KEY=your-sendgrid-api-key
+RESEND_API_KEY=your-resend-api-key
 CONTACT_EMAIL=your@email.com
 VERIFIED_SENDER=hello@yourdomain.com
 ```
+
+**Note**: Resend offers a generous free tier (3,000 emails/month, 100/day). Sign up at [resend.com](https://resend.com) to get your API key. You can use `onboarding@resend.dev` as a temporary sender for testing, but you'll need to verify your own domain for production use.
 
 - Replace all placeholder values with your own credentials.
 - If you fork or share this template, double-check that no secrets or private info are present in your codebase.

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
 // Simple in-memory rate limiting (use Redis in production)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -130,29 +130,63 @@ export async function POST(request: NextRequest) {
     const sanitizedEmail = sanitizeHtml(trimmedEmail);
     const sanitizedMessage = sanitizeHtml(trimmedMessage);
 
-    // Send email using SendGrid
-    if (process.env.SENDGRID_API_KEY) {
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    // Send email using Resend
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
       
-      await sgMail.send({
-        to: process.env.CONTACT_EMAIL || 'your@email.com',
-        from: process.env.VERIFIED_SENDER || 'hello@yourdomain.com',
-        replyTo: sanitizedEmail,
-        subject: `My Website's Contact Form Submission From: ${sanitizedName}`,
-        text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
-        html: `
-          <p><strong>Name:</strong> ${sanitizedName}</p>
-          <p><strong>Email:</strong> ${sanitizedEmail}</p>
-          <p><strong>Message:</strong></p>
-          <p>${sanitizedMessage.replace(/\n/g, '<br>')}</p>
-          <hr>
-          <p><small>Submitted from IP: ${clientIP}</small></p>
-        `
-      });
+      const toEmail = process.env.CONTACT_EMAIL;
+      const fromEmail = process.env.VERIFIED_SENDER || 'onboarding@resend.dev';
+      
+      if (!toEmail) {
+        console.error('Missing Resend configuration: CONTACT_EMAIL not set');
+        return NextResponse.json(
+          { error: 'Email service not configured. Please contact the site administrator.' },
+          { status: 500 }
+        );
+      }
+      
+      try {
+        await resend.emails.send({
+          from: fromEmail,
+          to: toEmail,
+          replyTo: sanitizedEmail,
+          subject: `My Website's Contact Form Submission From: ${sanitizedName}`,
+          text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
+          html: `
+            <p><strong>Name:</strong> ${sanitizedName}</p>
+            <p><strong>Email:</strong> ${sanitizedEmail}</p>
+            <p><strong>Message:</strong></p>
+            <p>${sanitizedMessage.replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p><small>Submitted from IP: ${clientIP}</small></p>
+          `
+        });
+      } catch (resendError: unknown) {
+        const error = resendError as Error;
+        console.error('Resend error:', {
+          message: error.message,
+          name: error.name
+        });
+        
+        // Provide more specific error messages
+        if (error.message?.includes('API key') || error.message?.includes('unauthorized')) {
+          return NextResponse.json(
+            { error: 'Email service authentication failed. Please check your Resend API key.' },
+            { status: 500 }
+          );
+        }
+        if (error.message?.includes('domain') || error.message?.includes('sender')) {
+          return NextResponse.json(
+            { error: 'Email service configuration error. Please verify your sender email/domain in Resend.' },
+            { status: 500 }
+          );
+        }
+        throw resendError; // Re-throw to be caught by outer catch
+      }
       
     } else {
       // Fallback: just log the message
-      console.log('Contact form submission:', {
+      console.log('Contact form submission (Resend not configured):', {
         name: sanitizedName,
         email: sanitizedEmail,
         message: sanitizedMessage,
