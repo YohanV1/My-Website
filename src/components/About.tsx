@@ -183,9 +183,6 @@ export default function About() {
 
   {/* Testimonial */}
   <div>
-    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-      Backed by Founders
-    </h3>
     <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-600">
       <div className="relative">
         {/* Quote Icon */}
