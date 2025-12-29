@@ -24,7 +24,7 @@ const technologies = [
   { name: 'Sharp', npm: 'sharp' },
   
   // Email Service
-  { name: 'SendGrid', npm: '@sendgrid/mail' },
+  { name: 'Resend', npm: 'resend' },
   
   // Type Definitions
   { name: '@types/node', npm: '@types/node' },
