@@ -14,7 +14,8 @@ export default function Research() {
       status: 'Accepted (unable to present, not published)',
       technologies: ['Python', 'TensorFlow', 'Neural Networks', 'Ensemble Learning', 'Synthetic Data Generation', 'Time Series Forecasting', 'Machine Learning'],
       year: 'April 2025',
-      type: 'Final Year Project'
+      type: 'Final Year Project',
+      paper: '/project-images/Ensemble Models Paper.pdf'
     }
   ];
 
@@ -35,9 +36,28 @@ export default function Research() {
             >
               <div className="p-8">
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-4">
-                  {paper.title}
-                </h3>
+                {paper.paper ? (
+                  <a
+                    href={paper.paper}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-4 transition-colors duration-200"
+                  >
+                    <span>{paper.title}</span>
+                    <svg 
+                      className="w-5 h-5 text-gray-500 dark:text-gray-400 opacity-70 group-hover:opacity-100 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all duration-200" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                ) : (
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight mb-4">
+                    {paper.title}
+                  </h3>
+                )}
                 
                 {/* Authors */}
                 <div className="mb-4">
