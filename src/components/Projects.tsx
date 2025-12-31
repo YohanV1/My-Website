@@ -13,6 +13,7 @@ interface Project {
   github: string;
   demo: string;
   producthunt?: string;
+  writeup?: string;
   featured: boolean;
   company: string;
   date: string;
@@ -224,7 +225,7 @@ const ProjectModal = ({
           </div>
 
           {/* Links */}
-          {(project.github !== '#' || project.demo !== '#' || project.producthunt) && (
+          {(project.github !== '#' || project.demo !== '#' || project.producthunt || project.writeup) && (
             <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 Project Links
@@ -267,6 +268,19 @@ const ProjectModal = ({
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                     Product Hunt
+                  </a>
+                )}
+                {project.writeup && (
+                  <a
+                    href={project.writeup}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-purple-700 transition-all duration-300 hover:scale-105"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    View Writeup
                   </a>
                 )}
               </div>
@@ -341,6 +355,7 @@ export default function Projects() {
       technologies: ['Java', 'Distributed Systems', 'KVS (Key-Value Store)', 'FLAME (Analytics Engine)', 'PageRank', 'TF-IDF', 'Porter Stemmer', 'REST APIs', 'AWS EC2', 'Multi-threading', 'HTTP/HTTPS', 'Levenshtein Distance', 'Data Structures'],
       github: '#',
       demo: '#',
+      writeup: '/project-images/5550_Writeup.pdf',
       featured: true,
       company: 'University of Pennsylvania (CIS 5550)',
       date: 'August 2025 - December 2025'
@@ -452,6 +467,7 @@ export default function Projects() {
       technologies: ['PyTorch', 'Transformers', 'DistilBERT', 'RoBERTa', 'LSTM', 'Hugging Face', 'scikit-learn', 'XGBoost', 'pandas', 'nltk', 'matplotlib', 'seaborn', 'NumPy', 'Python', 'Google Colab'],
       github: 'https://github.com/YohanV1/cis5190-news-classifier',
       demo: '#',
+      writeup: '/project-images/5190_Writeup.pdf',
       featured: true,
       company: 'University of Pennsylvania (CIS 5190)',
       date: 'August 2025 - December 2025'
@@ -589,44 +605,57 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  {(project.github !== '#' || project.demo !== '#' || project.producthunt) ? (
-                    <div className="flex gap-3">
-                      {project.github !== '#' && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
-                        >
-                          GitHub →
-                        </a>
-                      )}
-                      {project.demo !== '#' && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
-                        >
-                          Live Demo →
-                        </a>
-                      )}
-                      {project.producthunt && (
-                        <a
-                          href={project.producthunt}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
-                        >
-                          Product Hunt →
-                        </a>
-                      )}
-                    </div>
-                  ) : (
-                    <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-                      Private – please contact for details
-                    </p>
-                  )}
+                  <div className="flex flex-col gap-2">
+                    {(project.github !== '#' || project.demo !== '#' || project.producthunt || project.writeup) && (
+                      <div className="flex gap-3">
+                        {project.github !== '#' && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                          >
+                            GitHub →
+                          </a>
+                        )}
+                        {project.demo !== '#' && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                          >
+                            Live Demo →
+                          </a>
+                        )}
+                        {project.producthunt && (
+                          <a
+                            href={project.producthunt}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                          >
+                            Product Hunt →
+                          </a>
+                        )}
+                        {project.writeup && (
+                          <a
+                            href={project.writeup}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                          >
+                            Writeup →
+                          </a>
+                        )}
+                      </div>
+                    )}
+                    {project.github === '#' && (
+                      <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+                        Code Private – please contact for details
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

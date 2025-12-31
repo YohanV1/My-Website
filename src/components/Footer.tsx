@@ -94,7 +94,7 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="border-t border-gray-800 mt-8 pt-8 text-center">
               <p className="text-gray-400 mb-2">
-                © 2025 Yohan Vergis Vinu. All rights reserved.
+                © 2026 Yohan Vergis Vinu. All rights reserved.
               </p>
               <p className="text-gray-500 text-sm">
                 Last updated January 2026 • Built with Next.js, React, TypeScript & Tailwind CSS
