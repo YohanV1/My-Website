@@ -16,7 +16,7 @@ const techStackData = {
     title: 'Backend & Data Engineering',
     subdivisions: {
       'Frameworks': ['Django', 'Flask', 'FastAPI'],
-      'Databases & ORMs': ['PostgreSQL', 'MySQL', 'SQLAlchemy', 'ChromaDB', 'Pinecone'],
+      'Databases & ORMs': ['PostgreSQL', 'MySQL', 'Redis', 'SQLAlchemy', 'ChromaDB', 'Pinecone'],
       'Utilities': ['Celery', 'BeautifulSoup', 'aiohttp', 'PyJWT', 'Postman', 'Django Logging', 'Django Axes']
     }
   },
@@ -74,10 +74,11 @@ export default function About() {
                           Master of Science in Engineering, Computer and Information Science (CIS/MSE)
                         </div>
                         <div className="text-gray-700 dark:text-gray-200 font-medium mb-1">University of Pennsylvania</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">Expected May 2027</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Expected May 2027</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">GPA: 3.90/4.00</div>
                         <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">Notable Coursework</div>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
-                          Applied Machine Learning, Big Data Analytics, Internet and Web Systems
+                          Distributed Systems, Analysis of Algorithms, Machine Learning, Machine Perception, Big Data Analytics
                         </div>
                       </div>
                     </div>
@@ -121,7 +122,7 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  I&apos;m a Master&apos;s student in Computer Science at the University of Pennsylvania&apos;s School of Engineering and Applied Science (Penn Engineering). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
+                  I&apos;m a Master&apos;s student in Computer Science at the University of Pennsylvania&apos;s School of Engineering and Applied Science (Penn Engineering), where I also serve as a Graduate Teaching Assistant for CIS 5210 (Artificial Intelligence). My experience spans applied AI, full-stack development, UI/UX design, and product ideation and ownership.
                 </p>
                 <p>
                   At Moative (an AI startup), I led full-stack development and drove the end-to-end build and launch of multiple GenAI products, PoCs, and demos, including AI-enabled GovTech tools, HR assistants, dashboards, backend systems, and agentic chat/voice bots for large U.S. utility companies. One of the projects I led, Vina, is now live on Product Hunt.
