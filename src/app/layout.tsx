@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yohan Vergis Vinu | Software Engineer, AI & Systems",
-  description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania.",
-  keywords: ["AI/ML Engineer", "Machine Learning", "Full-Stack Development", "React", "Next.js", "TypeScript", "Python", "University of Pennsylvania"],
+  title: "Yohan Vergis Vinu | Software Engineer",
+  description: "Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory.",
+  keywords: ["Software Engineer", "Applied AI", "Distributed Systems", "Machine Learning", "LLM", "Python", "University of Pennsylvania"],
   authors: [{ name: "Yohan Vergis Vinu" }],
   creator: "Yohan Vergis Vinu",
   publisher: "Yohan Vergis Vinu",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     canonical: "https://yohanvvinu.com/",
   },
   openGraph: {
-    title: "Yohan Vergis Vinu - Software Engineer, AI & Systems",
-    description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania.",
+    title: "Yohan Vergis Vinu - Software Engineer",
+    description: "Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory.",
     url: "https://yohanvvinu.com",
     siteName: "Yohan Vergis Vinu's Website",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/card.png",
         width: 1200,
         height: 630,
-        alt: "Yohan Vergis Vinu - Software Engineer, AI & Systems",
+        alt: "Yohan Vergis Vinu - Software Engineer",
       },
     ],
     locale: "en_US",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yohan Vergis Vinu - Software Engineer, AI & Systems",
-    description: "Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered.",
+    title: "Yohan Vergis Vinu - Software Engineer",
+    description: "Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory.",
     images: ["/card.png"],
     creator: "@yohanvinu",
   },
@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <title>Yohan Vergis Vinu | Software Engineer, AI & Systems</title>
+        <title>Yohan Vergis Vinu | Software Engineer</title>
         {/* Umami Analytics */}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="b8960906-5cc6-4b8f-ae42-55d8438a44f2"></script>
         
@@ -80,15 +80,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cloud.umami.is" />
         
         {/* Manual meta tags for better crawler compatibility */}
-        <meta name="description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania." />
-        <meta name="keywords" content="AI/ML Engineer, Machine Learning, Full-Stack Development, React, Next.js, TypeScript, Python, University of Pennsylvania" />
-        <meta property="og:title" content="Yohan Vergis Vinu - Software Engineer, AI & Systems" />
-        <meta property="og:description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered. CS Master's Student at the University of Pennsylvania." />
+        <meta name="description" content="Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory." />
+        <meta name="keywords" content="Software Engineer, Applied AI, Distributed Systems, Machine Learning, LLM, Python, University of Pennsylvania" />
+        <meta property="og:title" content="Yohan Vergis Vinu - Software Engineer" />
+        <meta property="og:description" content="Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory." />
         <meta property="og:url" content="https://yohanvvinu.com" />
         <meta property="og:image" content="https://yohanvvinu.com/card.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Yohan Vergis Vinu - Software Engineer, AI & Systems" />
-        <meta name="twitter:description" content="Startup-native engineer building applied AI and full-stack products that ship fast, scale reliably, and stay obsessively user-centered." />
+        <meta name="twitter:title" content="Yohan Vergis Vinu - Software Engineer" />
+        <meta name="twitter:description" content="Software engineer working on applied AI and distributed systems. Master's student at the University of Pennsylvania researching LLM vigilance and memory." />
         <meta name="twitter:image" content="https://yohanvvinu.com/card.png" />
         
         {/* Theme color for mobile browsers */}

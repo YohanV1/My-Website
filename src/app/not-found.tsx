@@ -1,47 +1,23 @@
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
-      
-      <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
-        <div className="text-center max-w-2xl mx-auto">
-          {/* 404 Number */}
-          <div className="mb-8">
-            <h1 className="text-9xl font-bold text-gray-300 dark:text-gray-700">
-              404
-            </h1>
-          </div>
-          
-          {/* Error Message */}
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Page Not Found
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Oops! The page you&apos;re looking for doesn&apos;t exist. It might have been moved, deleted, or you entered the wrong URL.
-            </p>
-          </div>
-          
-          {/* Action Button */}
-          <div className="flex justify-center">
-            <Link 
-              href="/"
-              className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors duration-200"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              Go Home
-            </Link>
-          </div>
-        </div>
-      </div>
-      
-      <Footer />
+    <main className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <p className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500">
+        404
+      </p>
+      <h1 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        Page not found
+      </h1>
+      <p className="mt-2 text-[15px] text-gray-600 dark:text-gray-400">
+        The page you are looking for does not exist.
+      </p>
+      <Link
+        href="/"
+        className="mt-6 text-sm font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 dark:text-white dark:decoration-gray-600 dark:hover:decoration-gray-300"
+      >
+        Back home
+      </Link>
     </main>
   );
-} 
+}
