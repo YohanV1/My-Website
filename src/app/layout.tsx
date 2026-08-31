@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../contexts/ThemeContext";
-import PerformanceMonitor from "../components/PerformanceMonitor";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -99,7 +98,6 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <PerformanceMonitor />
       </body>
     </html>
   );

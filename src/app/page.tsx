@@ -7,6 +7,7 @@ type Item = {
   title: string;
   href?: string;
   right?: string;
+  tag?: string;
   sub?: string;
   detail?: string;
   bullets?: Bullet[];
@@ -45,7 +46,7 @@ const experience: Item[] = [
     right: 'Aug 2023 – Mar 2024',
     bullets: [
       {
-        text: 'Improved multi-class pet detection accuracy 11% over an off-the-shelf baseline by fine-tuning and benchmarking ResNet, YOLOv8, and MobileNetV2-SSD across standardized evaluation sets.',
+        text: 'Built a pet facial-state classifier (eye, ear, and mouth position) whose fine-tuned MobileNetV2-SSD beat the baseline by 11%, ahead of YOLOv8 and ResNet across standardized evaluation sets.',
       },
       {
         text: 'Compiled and annotated a 10K+ image dataset through manual collection, labeling, and augmentation to improve class balance, earning a Certificate of Excellence and a $1,000 award.',
@@ -56,15 +57,33 @@ const experience: Item[] = [
 
 const work: Item[] = [
   {
+    title: 'ModForge',
+    href: 'https://github.com/YohanV1/ModForge',
+    right: '2026',
+    tag: 'Natural-language Minecraft mod generator',
+    detail:
+      'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a compiled, installable Minecraft mod. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes. Around it I built the full product, from a FastAPI backend and Next.js frontend to usage-metered auth and one-click GitHub OAuth export, and reverse-verified Minecraft 26.1\'s newly unobfuscated API from the compiled JARs after official mappings were discontinued.',
+  },
+  {
     title: 'LLMFuzz',
     href: 'https://github.com/YohanV1/LLMFuzz',
     right: '2026',
+    tag: 'LLM-driven coverage-guided fuzzer',
     detail:
       'A coverage-guided fuzzing agent that closes the loop between an LLM and a live coverage instrument: rather than mutating blindly like AFL or LibFuzzer, it feeds a function\'s source and its uncovered branches back to the model each iteration to target specific unhit paths, then runs them in sandboxed subprocesses and measures branch coverage with coverage.py under an adaptive strategy. On a benchmark tokenizer it hit 98.3% branch coverage vs 90.7% for random fuzzing and found 4 crashes the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
   },
   {
+    title: 'PennSearch',
+    href: '/project-images/5550_Writeup.pdf',
+    right: '2025',
+    tag: 'Distributed web search engine, built from scratch',
+    detail:
+      'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface. On top of it, a politeness-aware crawler (300K+ pages), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves sub-50ms queries, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
+  },
+  {
     title: 'Mini-Minecraft',
     right: '2026',
+    tag: 'Voxel game engine in C++ and OpenGL',
     detail:
       'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in real time. Wrote the full GLSL shader stack, including a procedural analytic day/night sky, and generated rivers and asset scatter with a stochastic L-system and spatial hashing.',
   },
@@ -72,15 +91,9 @@ const work: Item[] = [
     title: 'AskWhatMatters',
     href: 'https://github.com/YohanV1/hack-ai-thon-submission-wanderiq',
     right: '2026',
+    tag: 'Adaptive hotel-review system',
     detail:
-      'A solo-built full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing. A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly a tenth of a cent per insight. Placed 3rd of 65 teams at the Wharton × Expedia Hack-AI-thon.',
-  },
-  {
-    title: 'PennSearch',
-    href: '/project-images/5550_Writeup.pdf',
-    right: '2025',
-    detail:
-      'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing) and a Spark-style compute engine with an RDD interface. On top of it, a politeness-aware crawler (~160K pages), a distributed inverted index with Porter stemming, iterative PageRank, and a ranked frontend served by a from-scratch HTTP/1.1 server with TLS.',
+      'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing. A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly a tenth of a cent per insight. Placed 3rd of 65 teams at the Wharton × Expedia Hack-AI-thon.',
   },
 ];
 
@@ -90,7 +103,7 @@ const research: Item[] = [
     right: 'Jun 2026 – present',
     sub: 'Advised by Chris Callison-Burch and Mark Yatskar',
     detail:
-      `My research targets the 'vigilance gap': a model holds a safety-critical fact a user shared earlier (say, a latex allergy) but fails to act on it once the question stops pointing back to it ("banana or avocado smoothie?"). I approach it as a memory problem: most memory systems are built to fetch what a user is asking about, while vigilance needs surfacing a fact they are not asking about but urgently need. A memory system I designed for safety rather than general recall raised success on a safety benchmark from 48% to 87% while lowering false alarms below the base model. I also built the parallelized, cost-tracked pipeline that runs these evaluations at scale.`,
+      `My research targets the 'vigilance gap': a model holds a safety-critical fact a user shared earlier (say, a latex allergy) but fails to act on it once the question stops pointing back to it ("banana or avocado smoothie?"). I approach it as a memory problem: most memory systems are built to fetch what a user is asking about, while vigilance needs surfacing a fact they are not asking about but urgently need. A memory system I designed for safety rather than general recall raised success on a safety benchmark from 48% to 87% while cutting false alarms from 11% to 8%, below the base model. I also built the parallelized, cost-tracked pipeline that runs these evaluations at scale.`,
   },
 ];
 
@@ -124,18 +137,26 @@ function Section({ label, items }: { label: string; items: Item[] }) {
         {items.map((item) => (
           <div key={item.title} className="py-4 first:pt-0 last:pb-0">
             <div className="flex items-baseline justify-between gap-4">
-              {item.href ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 dark:text-white dark:decoration-gray-600 dark:hover:decoration-gray-300"
-                >
-                  {item.title}
-                </a>
-              ) : (
-                <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
-              )}
+              <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 dark:text-white dark:decoration-gray-600 dark:hover:decoration-gray-300"
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
+                )}
+                {item.tag && (
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-gray-400 dark:text-gray-600">· </span>
+                    {item.tag}
+                  </span>
+                )}
+              </div>
               {item.right && (
                 <span className="shrink-0 text-sm tabular-nums text-gray-400 dark:text-gray-500">
                   {item.right}
@@ -222,10 +243,18 @@ export default function Home() {
                 LinkedIn
               </a>
               <a
-                href="mailto:yohanvvinu@gmail.com"
+                href="mailto:yohanvv@engineering.upenn.edu"
                 className="hover:text-gray-900 dark:hover:text-white"
               >
                 Email
+              </a>
+              <a
+                href="/Yohan_Vergis_Vinu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 dark:hover:text-white"
+              >
+                Resume
               </a>
             </div>
 
@@ -258,7 +287,7 @@ export default function Home() {
                     Computer Science and Engineering
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    GPA: 9.80 / 10
+                    GPA: 9.80 / 10 (Top 1%)
                   </div>
                   <div className="mt-0.5 text-xs tabular-nums text-gray-400 dark:text-gray-500">
                     Aug 2021 – May 2025
@@ -288,6 +317,10 @@ export default function Home() {
             <Section label="Teaching" items={teaching} />
           </div>
         </div>
+
+        <footer className="mt-16 border-t border-gray-200 pt-6 text-center text-xs text-gray-400 dark:border-gray-800 dark:text-gray-500">
+          © {new Date().getFullYear()} Yohan Vergis Vinu
+        </footer>
       </div>
     </main>
   );
