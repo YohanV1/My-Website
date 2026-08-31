@@ -215,8 +215,8 @@ export default function Home() {
             <Image
               src="/photo.png"
               alt="Yohan Vergis Vinu"
-              width={96}
-              height={96}
+              width={288}
+              height={288}
               priority
               className="h-24 w-24 rounded-full object-cover"
             />
