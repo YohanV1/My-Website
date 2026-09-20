@@ -358,7 +358,7 @@ export default function Home() {
                 </div>
                 <figure className="w-full shrink-0 sm:w-64">
                   <Shot
-                    src="/grogu.jpg"
+                    src="/grogu.png"
                     alt="Grogu, my rottweiler, next to a Grogu figure"
                     label="Grogu"
                     aspect="aspect-[4/3]"
