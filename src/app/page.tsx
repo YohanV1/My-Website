@@ -350,23 +350,10 @@ export default function Home() {
           <div className="mt-12 space-y-11 md:mt-0">
             <section>
               <Label>About</Label>
-              <div className="mt-3 flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
-                <div className="min-w-0 max-w-2xl flex-1 space-y-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
-                  {about.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
-                  ))}
-                </div>
-                <figure className="w-40 shrink-0 sm:w-44">
-                  <Shot
-                    src="/grogu.jpg"
-                    alt="Grogu, my rottweiler, next to a Grogu figure"
-                    label="Grogu"
-                    aspect="aspect-square"
-                  />
-                  <figcaption className="mt-2 text-center text-xs text-gray-400 dark:text-gray-500">
-                    Grogu, and his namesake
-                  </figcaption>
-                </figure>
+              <div className="mt-3 max-w-2xl space-y-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
+                {about.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
               </div>
             </section>
 
