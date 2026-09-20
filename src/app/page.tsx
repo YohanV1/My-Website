@@ -12,7 +12,7 @@ type Item = {
   right?: string;
   tag?: string;
   sub?: string;
-  detail?: string;
+  detail?: string | string[];
   bullets?: Bullet[];
   logo?: Logo;
   image?: string;
@@ -75,8 +75,10 @@ const work: Item[] = [
     right: '2026',
     tag: 'Natural-language Minecraft mod generator',
     image: '/project-images/modforge.png',
-    detail:
-      'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a **compiled, installable Minecraft mod**. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes. Around it I built the full product, from a FastAPI backend and Next.js frontend to usage-metered auth and one-click GitHub OAuth export, and reverse-verified Minecraft 26.1\'s newly unobfuscated API from the compiled JARs after official mappings were discontinued.',
+    detail: [
+      'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a **compiled, installable Minecraft mod**. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes.',
+      'Around it I built the full product, from a FastAPI backend and Next.js frontend to usage-metered auth and one-click GitHub OAuth export, and reverse-verified Minecraft 26.1\'s newly unobfuscated API from the compiled JARs after official mappings were discontinued.',
+    ],
   },
   {
     title: 'LLMFuzz',
@@ -84,8 +86,10 @@ const work: Item[] = [
     right: '2026',
     tag: 'LLM-driven coverage-guided fuzzer',
     image: '/project-images/LLMFuzz_1.png',
-    detail:
-      'A coverage-guided fuzzing agent that closes the loop between an LLM and a live coverage instrument: rather than mutating blindly like AFL or LibFuzzer, it feeds a function\'s source and its uncovered branches back to the model each iteration to target specific unhit paths, then runs them in sandboxed subprocesses and measures branch coverage with coverage.py under an adaptive strategy. On a benchmark tokenizer it hit **98.3% branch coverage** vs 90.7% for random fuzzing and found **4 crashes** the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
+    detail: [
+      'A coverage-guided fuzzing agent that closes the loop between an LLM and a live coverage instrument: rather than mutating blindly like AFL or LibFuzzer, it feeds a function\'s source and its uncovered branches back to the model each iteration to target specific unhit paths, then runs them in sandboxed subprocesses and measures branch coverage with coverage.py under an adaptive strategy.',
+      'On a benchmark tokenizer it hit **98.3% branch coverage** vs 90.7% for random fuzzing and found **4 crashes** the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
+    ],
   },
   {
     title: 'PennSearch',
@@ -93,16 +97,20 @@ const work: Item[] = [
     right: '2025',
     tag: 'Distributed web search engine, built from scratch',
     image: '/project-images/PennSearch_1.png',
-    detail:
-      'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface. On top of it, a politeness-aware crawler (**300K+ pages**), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves **sub-50ms queries**, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
+    detail: [
+      'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface.',
+      'On top of it, a politeness-aware crawler (**300K+ pages**), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves **sub-50ms queries**, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
+    ],
   },
   {
     title: 'Mini-Minecraft',
     right: '2026',
     tag: 'Voxel game engine in C++ and OpenGL',
     image: '/project-images/mini-minecraft.png',
-    detail:
-      'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in **real time**. Wrote the full GLSL shader stack, including a procedural analytic day/night sky, and generated rivers and asset scatter with a stochastic L-system and spatial hashing.',
+    detail: [
+      'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in **real time**.',
+      'Wrote the full GLSL shader stack, including a procedural analytic day/night sky, and generated rivers and asset scatter with a stochastic L-system and spatial hashing.',
+    ],
   },
   {
     title: 'AskWhatMatters',
@@ -110,8 +118,10 @@ const work: Item[] = [
     right: '2026',
     tag: 'Adaptive hotel-review system',
     image: '/project-images/askwhatmatters.png',
-    detail:
-      'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing. A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly **a tenth of a cent per insight**. Placed **3rd of 65 teams** at the Wharton × Expedia Hack-AI-thon.',
+    detail: [
+      'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing.',
+      'A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly **a tenth of a cent per insight**. Placed **3rd of 65 teams** at the Wharton × Expedia Hack-AI-thon.',
+    ],
   },
 ];
 
@@ -199,9 +209,13 @@ function ItemBody({ item }: { item: Item }) {
       </div>
       {item.sub && <p className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">{item.sub}</p>}
       {item.detail && (
-        <p className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-          <Rich text={item.detail} />
-        </p>
+        <div className="mt-1.5 space-y-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          {(Array.isArray(item.detail) ? item.detail : [item.detail]).map((para, i) => (
+            <p key={i}>
+              <Rich text={para} />
+            </p>
+          ))}
+        </div>
       )}
       {item.bullets && (
         <ul className="mt-2 space-y-2">
