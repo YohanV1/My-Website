@@ -280,8 +280,8 @@ export default function Home() {
         <ThemeToggle />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10 md:py-20 lg:px-16">
-        <div className="md:grid md:grid-cols-[18rem_1fr] md:gap-x-14">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 md:py-20 lg:px-16">
+        <div className="md:grid md:grid-cols-[16rem_1fr] md:gap-x-10 lg:gap-x-16">
           {/* Identity rail */}
           <aside className="md:sticky md:top-20 md:self-start">
             <Image
@@ -344,10 +344,10 @@ export default function Home() {
           <div className="mt-12 space-y-11 md:mt-0">
             <section>
               <Label>About</Label>
-              <p className="mt-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
                 {about}
               </p>
-              <div className="mt-4 border-l-2 border-gray-300 pl-3 dark:border-gray-600">
+              <div className="mt-4 max-w-2xl border-l-2 border-gray-300 pl-3 dark:border-gray-600">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">
                   Currently looking for full-time software engineering, AI, or ML roles starting May 2027.
                 </p>
