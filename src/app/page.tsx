@@ -25,9 +25,11 @@ const SAMSUNG: Logo = { src: '/logos/samsung.png', label: 'Samsung Research', mo
 
 // Each string is its own paragraph. Add or remove a line to add or remove a paragraph.
 const about = [
-  "I'm a startup-native software engineer + designer working on applied AI, with a love for building across the stack. I'm a sucker for great aesthetics and love making things, whether that's software, LEGO, Minecraft builds, or 3D models.",
+  "I'm a startup-native software engineer + designer working on applied AI, with a love for building across the stack. I'm a sucker for great aesthetics, and I've always liked making things--LEGO, Minecraft builds, 3D models. I'm also drawn to open worlds and worldbuilding.",
+
   "I'm currently pursuing my master's in Computer Science at Penn, graduating in May 2027, and doing research with the Penn NLP Group under Prof. Chris Callison-Burch on LLM vigilance and memory systems.",
-  "Among other things, I'm passionate about tennis and swimming and try to make time for both regularly. I also love dogs, and have a Rottweiler named Grogu!",
+
+  "I'm passionate about tennis and swimming and try to make time for both regularly. I also love dogs and have a Rottweiler named Grogu!",
 ];
 
 const experience: Item[] = [
@@ -348,15 +350,23 @@ export default function Home() {
           <div className="mt-12 space-y-11 md:mt-0">
             <section>
               <Label>About</Label>
-              <div className="mt-3 max-w-2xl space-y-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
-                {about.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-4 max-w-2xl border-l-2 border-gray-300 pl-3 dark:border-gray-600">
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
-                  Currently looking for full-time software engineering, AI, or ML roles starting May 2027.
-                </p>
+              <div className="mt-3 flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+                <div className="min-w-0 max-w-2xl flex-1 space-y-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">
+                  {about.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+                <figure className="w-40 shrink-0 sm:w-44">
+                  <Shot
+                    src="/grogu.jpg"
+                    alt="Grogu, my rottweiler, next to a Grogu figure"
+                    label="Grogu"
+                    aspect="aspect-square"
+                  />
+                  <figcaption className="mt-2 text-center text-xs text-gray-400 dark:text-gray-500">
+                    Grogu, and his namesake
+                  </figcaption>
+                </figure>
               </div>
             </section>
 

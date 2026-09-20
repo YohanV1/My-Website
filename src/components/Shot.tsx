@@ -11,11 +11,13 @@ export default function Shot({
   alt,
   label,
   href,
+  aspect = 'aspect-[16/10]',
 }: {
   src?: string;
   alt: string;
   label: string;
   href?: string;
+  aspect?: string;
 }) {
   const [failed, setFailed] = useState(false);
   const ref = useRef<HTMLImageElement>(null);
@@ -46,7 +48,7 @@ export default function Shot({
   );
 
   const frame = (
-    <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800">
+    <div className={`group relative ${aspect} w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800`}>
       {inner}
     </div>
   );
