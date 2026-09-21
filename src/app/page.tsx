@@ -10,6 +10,7 @@ type Bullet = { text: string };
 type Item = {
   title: string;
   href?: string;
+  links?: { label: string; href: string }[]; // explicit, labeled destinations
   right?: string;
   tag?: string;
   company?: string;
@@ -77,7 +78,7 @@ const experience: Item[] = [
 const work: Item[] = [
   {
     title: 'ModForge',
-    href: 'https://github.com/YohanV1/ModForge',
+    links: [{ label: 'GitHub', href: 'https://github.com/YohanV1/ModForge' }],
     right: '2026',
     tag: 'Natural-language Minecraft mod generator',
     image: '/project-images/modforge.png',
@@ -89,7 +90,7 @@ const work: Item[] = [
   },
   {
     title: 'LLMFuzz',
-    href: 'https://github.com/YohanV1/LLMFuzz',
+    links: [{ label: 'GitHub', href: 'https://github.com/YohanV1/LLMFuzz' }],
     right: '2026',
     tag: 'LLM-driven coverage-guided fuzzer',
     image: '/project-images/LLMFuzz_2.png',
@@ -104,7 +105,7 @@ const work: Item[] = [
   },
   {
     title: 'PennSearch',
-    href: '/project-images/5550_Writeup.pdf',
+    links: [{ label: 'Writeup (PDF)', href: '/project-images/5550_Writeup.pdf' }],
     right: '2025',
     tag: 'Distributed web search engine, built from scratch',
     image: '/project-images/PennSearch_1.jpg',
@@ -120,6 +121,7 @@ const work: Item[] = [
   },
   {
     title: 'Mini-Minecraft',
+    links: [{ label: 'Full demo (YouTube)', href: 'https://www.youtube.com/watch?v=oZ9Nx2jLinI' }],
     right: '2026',
     tag: 'Voxel game engine in C++ and OpenGL',
     image: '/project-images/mini-minecraft.png',
@@ -131,7 +133,7 @@ const work: Item[] = [
   },
   {
     title: 'AskWhatMatters',
-    href: 'https://github.com/YohanV1/hack-ai-thon-submission-wanderiq',
+    links: [{ label: 'GitHub', href: 'https://github.com/YohanV1/hack-ai-thon-submission-wanderiq' }],
     right: '2026',
     tag: 'Adaptive hotel-review system',
     image: '/project-images/askwhatmatters.jpeg',
@@ -186,18 +188,7 @@ function ItemBody({ item }: { item: Item }) {
     <div className="min-w-0 flex-1">
       <div className="flex items-baseline justify-between gap-4">
         <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
-          {item.href ? (
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 dark:text-white dark:decoration-gray-600 dark:hover:decoration-gray-300"
-            >
-              {item.title}
-            </a>
-          ) : (
-            <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
-          )}
+          <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
           {item.tag && (
             <span className="text-sm text-gray-500 dark:text-gray-400">
               <span className="text-gray-400 dark:text-gray-600">· </span>
@@ -237,6 +228,22 @@ function ItemBody({ item }: { item: Item }) {
             </li>
           ))}
         </ul>
+      )}
+      {item.links && item.links.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+          {item.links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-900 hover:decoration-gray-900 dark:text-gray-300 dark:decoration-gray-600 dark:hover:text-white dark:hover:decoration-gray-300"
+            >
+              {l.label}
+              <span aria-hidden> ↗</span>
+            </a>
+          ))}
+        </div>
       )}
     </div>
   );
