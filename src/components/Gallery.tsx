@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
-export type MediaItem = { src: string; video?: boolean; poster?: string };
+export type MediaItem = { src: string; video?: boolean; poster?: string; contain?: boolean };
 
 function Frame({ m, full, label }: { m: MediaItem; full: boolean; label: string }) {
   if (m.video) {
@@ -22,13 +22,16 @@ function Frame({ m, full, label }: { m: MediaItem; full: boolean; label: string 
       </video>
     );
   }
+  const thumbClass = m.contain
+    ? 'h-full w-full object-contain'
+    : 'h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]';
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={m.src}
       alt={label}
       loading="lazy"
-      className={full ? 'max-h-[85vh] max-w-full rounded-lg object-contain' : 'h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]'}
+      className={full ? 'max-h-[85vh] max-w-full rounded-lg object-contain' : thumbClass}
     />
   );
 }
