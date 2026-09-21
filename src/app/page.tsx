@@ -43,16 +43,16 @@ const experience: Item[] = [
     detail: 'Sole engineer on most projects, owning each from PRD and prototyping through infrastructure, deployment, and client demos.',
     bullets: [
       {
-        text: 'An AI interview-screening platform that turns raw interview audio into evidence-cited candidate evaluations through a LangGraph multi-agent pipeline (diarization, transcript structuring, trait-weighted scoring, comparison). Built the frontend and the encrypted auth and rate-limiting layer, and shipped it on AWS ECS Fargate. Reached 100+ interviews across 15+ companies.',
+        text: 'An AI interview-screening platform that turns raw interview audio into evidence-cited candidate scorecards, used across 100+ interviews at 15+ companies. Built on a LangGraph multi-agent pipeline (diarization, trait-weighted scoring, comparison); I owned the app, auth, and deployment.',
       },
       {
-        text: 'A utility support agent (outages, billing, meter readings, usage) that serves web chat, phone, and SMS from one LangGraph runtime, with per-customer memory that persists across sessions and channels (Flask, SQLAlchemy, Twilio, ElevenLabs, Whisper).',
+        text: 'A utility support agent for outages, billing, and usage that serves web chat, phone, and SMS from one LangGraph runtime, with per-customer memory that persists across sessions and channels.',
       },
       {
-        text: 'A permit-review agent (a Moative × Exceleron engagement) where a multimodal agent reads site plans and engineering drawings and checks them against a 22-point regulatory checklist from real municipal code, returning a pass/fail verdict with rationale per requirement. Shipped the Django backend, the citizen application flow, and a staff review dashboard.',
+        text: 'A permit-review agent (with Exceleron) where a multimodal model checks site plans and engineering drawings against a 22-point municipal-code checklist, returning a pass/fail with rationale per requirement. I shipped the Django backend, the citizen application flow, and the staff review dashboard.',
       },
       {
-        text: 'A company-lookup API (FastAPI) that turns a company name into structured business intelligence and an NAICS industry code in one call, using a chain of LangChain scraping agents plus a RAG layer over the 800-page NAICS manual (ChromaDB) to ground the code and avoid fabricated classifications.',
+        text: 'A company-lookup API (FastAPI) that turns a company name into structured firmographics and a NAICS code, using LangChain scraping agents and a RAG layer over the 800-page NAICS manual to avoid fabricated codes.',
       },
     ],
   },
