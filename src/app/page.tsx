@@ -131,7 +131,10 @@ const work: Item[] = [
     right: '2026',
     tag: 'Adaptive hotel-review system',
     image: '/project-images/AskWhatMatters_2.png',
-    media: [{ src: '/project-images/AskWhatMatters_2.png' }],
+    media: [
+      { src: '/project-images/AskWhatMatters_2.png' },
+      { src: '/project-images/askwhatmatters.jpeg' },
+    ],
     detail: [
       'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing.',
       'A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly **a tenth of a cent per insight**. Placed **3rd of 65 teams** at the Wharton × Expedia Hack-AI-thon.',
