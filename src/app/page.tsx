@@ -49,7 +49,7 @@ const experience: Item[] = [
         text: 'A utility support agent for outages, billing, and usage that serves web chat, phone, and SMS from one LangGraph runtime, with per-customer memory that persists across sessions and channels.',
       },
       {
-        text: 'A permit-review agent (with Exceleron) where a multimodal model checks site plans and engineering drawings against a 22-point municipal-code checklist, returning a pass/fail with rationale per requirement. I shipped the Django backend, the citizen application flow, and the staff review dashboard.',
+        text: 'A permit-review agent where a multimodal model checks site plans and engineering drawings against a 22-point municipal-code checklist, returning a pass/fail with rationale per requirement. I shipped the Django backend, the citizen application flow, and the staff review dashboard.',
       },
       {
         text: 'A company-lookup API (FastAPI) that turns a company name into structured firmographics and a NAICS code, using LangChain scraping agents and a RAG layer over the 800-page NAICS manual to avoid fabricated codes.',
