@@ -315,7 +315,7 @@ export default function Home() {
               width={288}
               height={288}
               priority
-              className="h-24 w-24 rounded-full object-cover"
+              className="h-32 w-32 rounded-full object-cover"
             />
             <h1 className="mt-5 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
               Yohan Vergis Vinu
