@@ -362,6 +362,11 @@ export default function Home() {
               ))}
             </div>
 
+            <p className="mt-5 flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden />
+              Open to full-time SWE / AI / ML roles, May 2027.
+            </p>
+
             <div className="mt-8">
               <Label>Education</Label>
               <div className="mt-3 space-y-4">
