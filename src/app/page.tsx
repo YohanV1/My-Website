@@ -254,7 +254,7 @@ function Section({ label, items }: { label: string; items: Item[] }) {
                 <ItemBody item={item} />
               </div>
               {(item.image || item.video || item.media) && (
-                <div className="sm:w-56 sm:shrink-0">
+                <div className="sm:w-72 sm:shrink-0">
                   <Gallery
                     label={item.title}
                     media={
