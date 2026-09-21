@@ -164,15 +164,12 @@ const research: Item[] = [
 
 const teaching: Item[] = [
   {
-    title: 'Graduate Teaching Assistant, CIS 5210 · Artificial Intelligence',
+    title: 'Graduate Teaching Assistant',
+    company: 'University of Pennsylvania',
     bullets: [
-      { text: 'Spring 2026, taught by Harry Smith' },
-      { text: 'Summer and Fall 2026, taught by Chris Callison-Burch' },
+      { text: 'CIS 5210 · Artificial Intelligence. Taught by Harry Smith (Spring 2026) and Chris Callison-Burch (Summer and Fall 2026).' },
+      { text: 'CIT 5960 · Algorithms and Computation. Taught by Anindya De and Erik Waingarten (Fall 2026).' },
     ],
-  },
-  {
-    title: 'Graduate Teaching Assistant, CIT 5960 · Algorithms and Computation',
-    bullets: [{ text: 'Fall 2026, taught by Anindya De and Erik Waingarten' }],
   },
 ];
 
