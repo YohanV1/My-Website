@@ -16,6 +16,7 @@ type Item = {
   bullets?: Bullet[];
   logo?: Logo;
   image?: string;
+  video?: string; // silent looping MP4 demo; uses `image` as its poster
 };
 
 const PENN: Logo = { src: '/logos/penn.png', label: 'University of Pennsylvania', mono: 'P' };
@@ -253,10 +254,11 @@ function Section({ label, items }: { label: string; items: Item[] }) {
                 )}
                 <ItemBody item={item} />
               </div>
-              {item.image && (
+              {(item.image || item.video) && (
                 <div className="sm:w-56 sm:shrink-0">
                   <Shot
                     src={item.image}
+                    video={item.video}
                     alt={`${item.title}: ${item.tag ?? item.sub ?? ''}`}
                     label={item.title}
                     href={item.href?.startsWith('http') ? item.href : undefined}

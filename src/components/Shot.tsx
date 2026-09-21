@@ -3,17 +3,22 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * A project/research screenshot with a labeled placeholder fallback.
- * Add images to /public/project-images/ and set `image` on the item.
+ * A project/research visual with a labeled placeholder fallback.
+ * - `image`: a screenshot (set `src`).
+ * - `video`: a silent looping demo clip (MP4). It autoplays and uses the
+ *   image as its poster, so the screenshot shows until the video is ready.
+ * Files go in /public/project-images/.
  */
 export default function Shot({
   src,
+  video,
   alt,
   label,
   href,
   aspect = 'aspect-[16/10]',
 }: {
   src?: string;
+  video?: string;
   alt: string;
   label: string;
   href?: string;
@@ -29,7 +34,20 @@ export default function Shot({
 
   const showImage = Boolean(src) && !failed;
 
-  const inner = showImage ? (
+  const inner = video ? (
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster={src}
+      aria-label={alt}
+      className="h-full w-full object-cover"
+    >
+      <source src={video} type="video/mp4" />
+    </video>
+  ) : showImage ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       ref={ref}
