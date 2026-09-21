@@ -76,6 +76,7 @@ const work: Item[] = [
     right: '2026',
     tag: 'Natural-language Minecraft mod generator',
     image: '/project-images/modforge.png',
+    video: '/project-images/modforge.mp4',
     detail: [
       'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a **compiled, installable Minecraft mod**. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes.',
       'Around it I built the full product, from a FastAPI backend and Next.js frontend to usage-metered auth and one-click GitHub OAuth export, and reverse-verified Minecraft 26.1\'s newly unobfuscated API from the compiled JARs after official mappings were discontinued.',
