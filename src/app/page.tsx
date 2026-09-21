@@ -109,6 +109,7 @@ const work: Item[] = [
     right: '2026',
     tag: 'Voxel game engine in C++ and OpenGL',
     image: '/project-images/mini-minecraft.png',
+    video: '/project-images/minimc.mp4',
     detail: [
       'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in **real time**.',
       'Wrote the full GLSL shader stack, including a procedural analytic day/night sky, and generated rivers and asset scatter with a stochastic L-system and spatial hashing.',
