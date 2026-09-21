@@ -2,6 +2,7 @@ import Image from 'next/image';
 import ThemeToggle from '@/components/ThemeToggle';
 import OrgLogo from '@/components/OrgLogo';
 import Shot from '@/components/Shot';
+import Gallery, { type MediaItem } from '@/components/Gallery';
 
 type Logo = { src?: string; label: string; mono: string };
 type Bullet = { text: string };
@@ -17,6 +18,7 @@ type Item = {
   logo?: Logo;
   image?: string;
   video?: string; // silent looping MP4 demo; uses `image` as its poster
+  media?: MediaItem[]; // multiple images/videos; click opens a fullscreen gallery
 };
 
 const PENN: Logo = { src: '/logos/penn.png', label: 'University of Pennsylvania', mono: 'P' };
@@ -99,6 +101,10 @@ const work: Item[] = [
     right: '2025',
     tag: 'Distributed web search engine, built from scratch',
     image: '/project-images/PennSearch_1.png',
+    media: [
+      { src: '/project-images/PennSearch_1.png' },
+      { src: '/project-images/PennSearch_2.png' },
+    ],
     detail: [
       'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface.',
       'On top of it, a politeness-aware crawler (**300K+ pages**), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves **sub-50ms queries**, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
@@ -256,14 +262,18 @@ function Section({ label, items }: { label: string; items: Item[] }) {
                 )}
                 <ItemBody item={item} />
               </div>
-              {(item.image || item.video) && (
+              {(item.image || item.video || item.media) && (
                 <div className="sm:w-56 sm:shrink-0">
-                  <Shot
-                    src={item.image}
-                    video={item.video}
-                    alt={`${item.title}: ${item.tag ?? item.sub ?? ''}`}
+                  <Gallery
                     label={item.title}
-                    href={item.href?.startsWith('http') ? item.href : undefined}
+                    media={
+                      item.media ??
+                      (item.video
+                        ? [{ src: item.video, video: true, poster: item.image }]
+                        : item.image
+                          ? [{ src: item.image }]
+                          : [])
+                    }
                   />
                 </div>
               )}
