@@ -12,6 +12,7 @@ type Item = {
   href?: string;
   right?: string;
   tag?: string;
+  company?: string;
   sub?: string;
   detail?: string | string[];
   bullets?: Bullet[];
@@ -37,7 +38,8 @@ const about = [
 
 const experience: Item[] = [
   {
-    title: 'Software Engineer Intern, Applied AI · Moative',
+    title: 'Software Engineer Intern, Applied AI',
+    company: 'Moative',
     right: 'Aug 2024 – Jun 2025',
     logo: MOATIVE,
     detail: 'Sole engineer on most projects, owning each from PRD and prototyping through infrastructure, deployment, and client demos.',
@@ -57,7 +59,8 @@ const experience: Item[] = [
     ],
   },
   {
-    title: 'Machine Learning Engineer Intern · Samsung Research',
+    title: 'Machine Learning Engineer Intern',
+    company: 'Samsung Research',
     right: 'Aug 2023 – Mar 2024',
     logo: SAMSUNG,
     bullets: [
@@ -211,6 +214,9 @@ function ItemBody({ item }: { item: Item }) {
           </span>
         )}
       </div>
+      {item.company && (
+        <p className="mt-0.5 text-sm font-medium text-gray-700 dark:text-gray-300">{item.company}</p>
+      )}
       {item.sub && <p className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">{item.sub}</p>}
       {item.detail && (
         <div className="mt-1.5 space-y-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
