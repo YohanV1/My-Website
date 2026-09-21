@@ -43,16 +43,16 @@ const experience: Item[] = [
     detail: 'Sole engineer on most projects, owning each from PRD and prototyping through infrastructure, deployment, and client demos.',
     bullets: [
       {
-        text: 'An **AI interview-screening platform** that turns raw interview audio into evidence-cited candidate evaluations through a LangGraph multi-agent pipeline (diarization, transcript structuring, trait-weighted scoring, comparison). Built the frontend and the encrypted auth and rate-limiting layer, and shipped it on AWS ECS Fargate. Reached **100+ interviews across 15+ companies**.',
+        text: 'An AI interview-screening platform that turns raw interview audio into evidence-cited candidate evaluations through a LangGraph multi-agent pipeline (diarization, transcript structuring, trait-weighted scoring, comparison). Built the frontend and the encrypted auth and rate-limiting layer, and shipped it on AWS ECS Fargate. Reached 100+ interviews across 15+ companies.',
       },
       {
-        text: 'A **utility support agent** (outages, billing, meter readings, usage) that serves web chat, phone, and SMS from one LangGraph runtime, with per-customer memory that persists across sessions and channels (Flask, SQLAlchemy, Twilio, ElevenLabs, Whisper).',
+        text: 'A utility support agent (outages, billing, meter readings, usage) that serves web chat, phone, and SMS from one LangGraph runtime, with per-customer memory that persists across sessions and channels (Flask, SQLAlchemy, Twilio, ElevenLabs, Whisper).',
       },
       {
-        text: 'A **permit-review agent** (a Moative × Exceleron engagement) where a multimodal agent reads site plans and engineering drawings and checks them against a 22-point regulatory checklist from real municipal code, returning a pass/fail verdict with rationale per requirement. Shipped the Django backend, the citizen application flow, and a staff review dashboard.',
+        text: 'A permit-review agent (a Moative × Exceleron engagement) where a multimodal agent reads site plans and engineering drawings and checks them against a 22-point regulatory checklist from real municipal code, returning a pass/fail verdict with rationale per requirement. Shipped the Django backend, the citizen application flow, and a staff review dashboard.',
       },
       {
-        text: 'A **company-lookup API** (FastAPI) that turns a company name into structured business intelligence and an NAICS industry code in one call, using a chain of LangChain scraping agents plus a RAG layer over the 800-page NAICS manual (ChromaDB) to ground the code and avoid fabricated classifications.',
+        text: 'A company-lookup API (FastAPI) that turns a company name into structured business intelligence and an NAICS industry code in one call, using a chain of LangChain scraping agents plus a RAG layer over the 800-page NAICS manual (ChromaDB) to ground the code and avoid fabricated classifications.',
       },
     ],
   },
@@ -62,7 +62,7 @@ const experience: Item[] = [
     logo: SAMSUNG,
     bullets: [
       {
-        text: 'Built a pet facial-state classifier (eye, ear, and mouth position) whose fine-tuned MobileNetV2-SSD beat the baseline by **11%**, ahead of YOLOv8 and ResNet across standardized evaluation sets.',
+        text: 'Built a pet facial-state classifier (eye, ear, and mouth position) whose fine-tuned MobileNetV2-SSD beat the baseline by 11%, ahead of YOLOv8 and ResNet across standardized evaluation sets.',
       },
       {
         text: 'Compiled and annotated a 10K+ image dataset through manual collection, labeling, and augmentation to improve class balance, earning a Certificate of Excellence and a $1,000 award.',
@@ -80,7 +80,7 @@ const work: Item[] = [
     image: '/project-images/modforge.png',
     video: '/project-images/modforge.mp4',
     detail: [
-      'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a **compiled, installable Minecraft mod**. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes.',
+      'A platform that turns a plain-English prompt ("a diamond sword that shoots lightning") into a compiled, installable Minecraft mod. The core is an agentic loop with no human in it: an agent writes Fabric/Java against retrieved API context, a sandboxed Docker + Gradle container compiles it under resource limits, and build errors are fed back to the model to self-repair until it passes.',
       'Around it I built the full product, from a FastAPI backend and Next.js frontend to usage-metered auth and one-click GitHub OAuth export, and reverse-verified Minecraft 26.1\'s newly unobfuscated API from the compiled JARs after official mappings were discontinued.',
     ],
   },
@@ -96,7 +96,7 @@ const work: Item[] = [
     ],
     detail: [
       'A coverage-guided fuzzing agent that closes the loop between an LLM and a live coverage instrument: rather than mutating blindly like AFL or LibFuzzer, it feeds a function\'s source and its uncovered branches back to the model each iteration to target specific unhit paths, then runs them in sandboxed subprocesses and measures branch coverage with coverage.py under an adaptive strategy.',
-      'On a benchmark tokenizer it hit **98.3% branch coverage** vs 90.7% for random fuzzing and found **4 crashes** the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
+      'On a benchmark tokenizer it hit 98.3% branch coverage vs 90.7% for random fuzzing and found 4 crashes the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
     ],
   },
   {
@@ -111,7 +111,7 @@ const work: Item[] = [
     ],
     detail: [
       'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface.',
-      'On top of it, a politeness-aware crawler (**300K+ pages**), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves **sub-50ms queries**, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
+      'On top of it, a politeness-aware crawler (300K+ pages), a distributed inverted index with Porter stemming, multi-signal ranking (TF-IDF, iterative PageRank, title/URL matching) that serves sub-50ms queries, and a ranked frontend on a from-scratch HTTP/1.1 server with TLS.',
     ],
   },
   {
@@ -121,7 +121,7 @@ const work: Item[] = [
     image: '/project-images/mini-minecraft.png',
     video: '/project-images/minimc.mp4',
     detail: [
-      'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in **real time**.',
+      'A from-scratch voxel engine in C++ and OpenGL (3-person team) where I owned rendering and procedural generation: a chunked terrain renderer with face-culled meshing, interleaved VBOs, and zone-based streaming that pages 16-chunk regions in and out around the player in real time.',
       'Wrote the full GLSL shader stack, including a procedural analytic day/night sky, and generated rivers and asset scatter with a stochastic L-system and spatial hashing.',
     ],
   },
@@ -137,7 +137,7 @@ const work: Item[] = [
     ],
     detail: [
       'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing.',
-      'A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly **a tenth of a cent per insight**. Placed **3rd of 65 teams** at the Wharton × Expedia Hack-AI-thon.',
+      'A deterministic gap-scoring engine (coverage, freshness, and traveler impact, with Bayesian confidence floors) runs offline as a batch job, and an LLM only phrases the questions on top of numbers you can audit, at roughly a tenth of a cent per insight. Placed 3rd of 65 teams at the Wharton × Expedia Hack-AI-thon.',
     ],
   },
 ];
@@ -150,8 +150,11 @@ const research: Item[] = [
     logo: PENN,
     image: '/project-images/research.png',
     media: [{ src: '/project-images/research.png', contain: true }],
-    detail:
-      `My research targets the 'vigilance gap': a model holds a safety-critical fact a user shared earlier (say, a latex allergy) but fails to act on it once the question stops pointing back to it ("banana or avocado smoothie?"). I approach it as a memory problem: most memory systems are built to fetch what a user is asking about, while vigilance needs surfacing a fact they are not asking about but urgently need. A memory system I designed for safety rather than general recall raised success on a safety benchmark from **48% to 87%** while cutting false alarms from **11% to 8%**, below the base model. I also built the parallelized, cost-tracked pipeline that runs these evaluations at scale.`,
+    detail: [
+      `My research targets the 'vigilance gap': a model holds a safety-critical fact a user shared earlier (say, a latex allergy) but fails to act on it once the question stops pointing back to it ("banana or avocado smoothie?").`,
+      `I approach it as a memory problem. Most memory systems are built to fetch what a user is asking about, while vigilance needs the opposite: surfacing a fact they are not asking about but urgently need.`,
+      `A memory system I designed for safety rather than general recall raised success on a safety benchmark from 48% to 87%, while cutting false alarms from 11% to 8%, below the base model. I also built the parallelized, cost-tracked pipeline that runs these evaluations at scale.`,
+    ],
   },
 ];
 
@@ -168,24 +171,6 @@ const teaching: Item[] = [
     bullets: [{ text: 'Fall 2026, taught by Anindya De and Erik Waingarten' }],
   },
 ];
-
-/* Renders **bold** spans so key numbers stand out. */
-function Rich({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.startsWith('**') && p.endsWith('**') ? (
-          <strong key={i} className="font-semibold text-gray-900 dark:text-white">
-            {p.slice(2, -2)}
-          </strong>
-        ) : (
-          <span key={i}>{p}</span>
-        )
-      )}
-    </>
-  );
-}
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
@@ -229,9 +214,7 @@ function ItemBody({ item }: { item: Item }) {
       {item.detail && (
         <div className="mt-1.5 space-y-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
           {(Array.isArray(item.detail) ? item.detail : [item.detail]).map((para, i) => (
-            <p key={i}>
-              <Rich text={para} />
-            </p>
+            <p key={i}>{para}</p>
           ))}
         </div>
       )}
@@ -246,9 +229,7 @@ function ItemBody({ item }: { item: Item }) {
                 className="mt-[0.5rem] h-1 w-1 shrink-0 rounded-full bg-gray-400 dark:bg-gray-600"
                 aria-hidden
               />
-              <span>
-                <Rich text={b.text} />
-              </span>
+              <span>{b.text}</span>
             </li>
           ))}
         </ul>
@@ -364,7 +345,7 @@ export default function Home() {
 
             <p className="mt-5 flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
               <span className="h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden />
-              Open to full-time SWE / AI / ML roles, May 2027.
+              Open to full-time SWE / AI / ML roles, starting May 2027.
             </p>
 
             <div className="mt-8">
