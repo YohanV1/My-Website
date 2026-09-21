@@ -89,7 +89,11 @@ const work: Item[] = [
     href: 'https://github.com/YohanV1/LLMFuzz',
     right: '2026',
     tag: 'LLM-driven coverage-guided fuzzer',
-    image: '/project-images/LLMFuzz_1.png',
+    image: '/project-images/LLMFuzz_2.png',
+    media: [
+      { src: '/project-images/LLMFuzz_2.png' },
+      { src: '/project-images/LLMFuzz_1.png' },
+    ],
     detail: [
       'A coverage-guided fuzzing agent that closes the loop between an LLM and a live coverage instrument: rather than mutating blindly like AFL or LibFuzzer, it feeds a function\'s source and its uncovered branches back to the model each iteration to target specific unhit paths, then runs them in sandboxed subprocesses and measures branch coverage with coverage.py under an adaptive strategy.',
       'On a benchmark tokenizer it hit **98.3% branch coverage** vs 90.7% for random fuzzing and found **4 crashes** the baseline missed, using under half the inputs. Scales horizontally with a Redis-Streams coordinator and worker layer.',
