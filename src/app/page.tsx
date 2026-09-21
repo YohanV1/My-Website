@@ -104,10 +104,11 @@ const work: Item[] = [
     href: '/project-images/5550_Writeup.pdf',
     right: '2025',
     tag: 'Distributed web search engine, built from scratch',
-    image: '/project-images/PennSearch_1.png',
+    image: '/project-images/PennSearch_1.jpg',
     media: [
-      { src: '/project-images/PennSearch_1.png' },
+      { src: '/project-images/PennSearch_1.jpg' },
       { src: '/project-images/PennSearch_2.png' },
+      { src: '/project-images/PennSearch_3.png' },
     ],
     detail: [
       'A Java web search engine running on distributed infrastructure I built from scratch: a sharded, disk-backed key-value store (coordinator and workers, consistent-hashing with cross-node replication) and a Spark-style compute engine with an RDD interface.',
