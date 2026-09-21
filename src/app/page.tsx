@@ -130,10 +130,10 @@ const work: Item[] = [
     href: 'https://github.com/YohanV1/hack-ai-thon-submission-wanderiq',
     right: '2026',
     tag: 'Adaptive hotel-review system',
-    image: '/project-images/AskWhatMatters_2.png',
+    image: '/project-images/askwhatmatters.jpeg',
     media: [
-      { src: '/project-images/AskWhatMatters_2.png' },
       { src: '/project-images/askwhatmatters.jpeg' },
+      { src: '/project-images/AskWhatMatters_2.png' },
     ],
     detail: [
       'A full-stack system that rethinks the post-stay hotel review: instead of a generic form, it mines a property\'s existing reviews for what is missing, stale, or contradicted, then asks one or two targeted follow-ups while the guest is reviewing.',
