@@ -29,7 +29,7 @@ const SAMSUNG: Logo = { src: '/logos/samsung.png', label: 'Samsung Research', mo
 
 // Each string is its own paragraph. Add or remove a line to add or remove a paragraph.
 const about = [
-  "I'm a startup-native software engineer + designer working on applied AI, with a love for building across the stack. I'm a sucker for great aesthetics, and I've always liked making things--LEGO, Minecraft builds, 3D models. I'm also drawn to open worlds and worldbuilding.",
+  "I'm a startup-native software engineer + designer working on applied AI, with a love for building across the stack. I'm a sucker for great aesthetics, and I've always liked making things: LEGO, Minecraft builds, 3D models. I'm also drawn to open worlds and worldbuilding.",
 
   "I'm currently pursuing my master's in Computer Science at Penn, graduating in May 2027, and doing research with the Penn NLP Group under Prof. Chris Callison-Burch on LLM vigilance and memory systems.",
 
