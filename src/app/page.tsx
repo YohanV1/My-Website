@@ -331,7 +331,7 @@ export default function Home() {
               Yohan Vergis Vinu
             </h1>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-              Software engineer &amp; designer
+              Software Engineer &amp; Designer
             </p>
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Philadelphia, PA</p>
 
